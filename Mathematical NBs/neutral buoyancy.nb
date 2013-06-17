@@ -1,0 +1,455 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 9.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[     18666,        445]
+NotebookOptionsPosition[     17722,        409]
+NotebookOutlinePosition[     18079,        425]
+CellTagsIndexPosition[     18036,        422]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.580130996365583*^9, 3.5801310178652277`*^9}}],
+
+Cell[TextData[{
+ StyleBox["FLYING APPLE SPACE TECHNOLOGIES\nMATHEMATICA BUOYANCY CALCULATOR\n\
+\n", "Subtitle"],
+ "This ",
+ StyleBox["Mathematica ",
+  FontSlant->"Italic"],
+ "notebook was created by Eric Lujan at the University of Nevada, Las Vegas.\n\
+Based on scientific research by Eric Lujan, Jake Lee, and Ian Rabago.\n\
+Special thanks to Amanda Maxham, Ph.D and Edward Giandomenico.\nThis notebook \
+created in Wolfram ",
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ " 9.0.0.0 \n\n",
+ StyleBox["WARNING: To produce a good set of values, you MUST change the \
+variables and constants to the applicable values for your launch. Pay \
+attention to units. This notebook has been prefilled with values for hydrogen \
+gas in a 1600g Hwoyee weather balloon with a 150g payload (and assuming no \
+backpressure) being launched at STP. Your values will probably differ.\n\n",
+  FontColor->RGBColor[1, 0, 0],
+  Background->RGBColor[1, 1, 0]],
+ StyleBox["HOW TO USE THIS NOTEBOOK\n", "Subsubtitle",
+  FontColor->GrayLevel[0.5]],
+ StyleBox["This notebook is broken into three sections: one for user-defined \
+values, one for the actual code that runs the calculations, and one that \
+displays the results of the calculations.\n1. Edit the values in the \
+user-defined value section to match the parameters of your balloon launch. \
+Make sure the units are correct.\n2. Run Evaluation > Evaluate Notebook. \
+Watch for errors. \n3. Scroll down to the bottom of the notebook for the \
+computed values and a detailed explaination of what they mean.",
+  FontColor->GrayLevel[0]]
+}], "Text",
+ CellChangeTimes->{{3.5801310251793756`*^9, 3.5801310715466967`*^9}, {
+   3.580131247428212*^9, 3.5801312541538677`*^9}, {3.580131430539549*^9, 
+   3.5801314309076433`*^9}, 3.580135236296467*^9, {3.580135291448948*^9, 
+   3.580135361815781*^9}, {3.580135404992979*^9, 3.580135445711113*^9}, {
+   3.580135951405854*^9, 3.580135962533328*^9}, {3.580136022795168*^9, 
+   3.580136023395154*^9}, {3.580136138731516*^9, 3.5801362434072723`*^9}, {
+   3.580136303262463*^9, 3.5801363056212177`*^9}, {3.580136346403955*^9, 
+   3.580136378594488*^9}, {3.580136412209035*^9, 3.580136615230546*^9}, {
+   3.580136650831811*^9, 3.580136651901555*^9}, {3.58013673950911*^9, 
+   3.580136747002339*^9}, {3.580136836009821*^9, 3.5801368601676683`*^9}, {
+   3.580136901223918*^9, 3.580136905246525*^9}}],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.580135481567038*^9, 3.580135483934692*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[TextData[StyleBox["USER-DEFINED VALUES (EDIT THIS PART)", \
+"Subsubtitle"]], "Subtitle",
+ CellChangeTimes->{{3.5801355001674547`*^9, 3.5801355141407146`*^9}}],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"balloonmass", " ", "=", " ", "1.6"}], ";"}], " ", 
+  RowBox[{"(*", " ", 
+   RowBox[{
+   "Mass", " ", "of", " ", "the", " ", "balloon", " ", "in", " ", "kg"}], " ",
+    "*)"}]}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"payloadmass", " ", "=", " ", "0.15"}], ";"}], " ", 
+  RowBox[{"(*", " ", 
+   RowBox[{
+   "Mass", " ", "of", " ", "the", " ", "payload", " ", "in", " ", "kg"}], " ",
+    "*)"}]}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"rair", " ", "=", " ", "286.9"}], ";"}], " ", 
+  RowBox[{"(*", " ", 
+   RowBox[{"Gas", " ", "constant", " ", "for", " ", "air", " ", "in", " ", 
+    RowBox[{"J", "/", "kg"}], " ", "K"}], " ", "*)"}]}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"rgas", " ", "=", " ", "4124"}], ";"}], " ", 
+  RowBox[{"(*", " ", 
+   RowBox[{
+   "Gas", " ", "constant", " ", "for", " ", "lift", " ", "gas", " ", "in", 
+    " ", 
+    RowBox[{"J", "/", "kg"}], " ", "K"}], " ", "*)"}]}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"mmgas", " ", "=", " ", "0.00201"}], ";"}], " ", 
+  RowBox[{"(*", " ", 
+   RowBox[{
+   "Molar", " ", "mass", " ", "of", " ", "the", " ", "gas", " ", "in", " ", 
+    RowBox[{"kg", "/", "mol"}]}], " ", "*)"}]}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"stppressure", " ", "=", " ", "101300"}], ";"}], " ", 
+  RowBox[{"(*", " ", 
+   RowBox[{
+   "Pressure", " ", "at", " ", "your", " ", "launch", " ", "point", " ", "in",
+     " ", "pascals"}], " ", "*)"}]}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"stptemperature", " ", "=", " ", "298"}], ";"}], " ", 
+  RowBox[{"(*", " ", 
+   RowBox[{
+   "Temperature", " ", "at", " ", "your", " ", "launch", " ", "point", " ", 
+    "in", " ", "Kelvin"}], " ", "*)"}]}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"stpforce", " ", "=", " ", "0.2"}], ";"}], " ", 
+  RowBox[{"(*", " ", 
+   RowBox[{
+   "Desired", " ", "initial", " ", "lift", " ", "force", " ", "in", " ", "kg",
+     " ", "of", " ", "force"}], " ", "*)"}]}], "\n", 
+ RowBox[{
+  RowBox[{"stpbackpressure", " ", "=", " ", "0"}], ";", " ", 
+  RowBox[{"(*", " ", 
+   RowBox[{
+   "Backpressure", " ", "of", " ", "the", " ", "balloon", " ", "at", " ", 
+    "the", " ", "launch", " ", "in", " ", "pascals"}], " ", "*)"}], "\n", 
+  RowBox[{"altpressure", " ", "=", " ", "1197"}], ";", " ", 
+  RowBox[{"(*", " ", 
+   RowBox[{
+   "Pressure", " ", "of", " ", "the", " ", "atmosphere", " ", "at", " ", 
+    "target", " ", "altitude", " ", "in", " ", "pascals"}], " ", "*)"}], "\n", 
+  RowBox[{"alttemperature", " ", "=", " ", "226.51"}], ";", " ", 
+  RowBox[{"(*", " ", 
+   RowBox[{
+   "Temperature", " ", "at", " ", "target", " ", "altitude", " ", "in", " ", 
+    "Kelvin"}], " ", "*)"}], "\n", 
+  RowBox[{"altforce", " ", "=", " ", "0"}], ";", " ", 
+  RowBox[{"(*", " ", 
+   RowBox[{
+   "Desired", " ", "upward", " ", "force", " ", "on", " ", "the", " ", 
+    "balloon", " ", "at", " ", "altitude", " ", "in", " ", "kg", " ", "of", 
+    " ", "force"}], " ", "*)"}], "\n", 
+  RowBox[{"altbackpressure", " ", "=", " ", "0"}], ";", " ", 
+  RowBox[{"(*", " ", 
+   RowBox[{
+   "Backpressure", " ", "of", " ", "the", " ", "balloon", " ", "at", " ", 
+    "target", " ", "altitude"}], " ", "*)"}]}]}], "Code",
+ CellChangeTimes->{{3.5801310750647707`*^9, 3.5801311385254173`*^9}, {
+   3.5801311719132843`*^9, 3.580131227411749*^9}, {3.580131300384502*^9, 
+   3.58013145419621*^9}, {3.580131609573514*^9, 3.580131677928207*^9}, {
+   3.58013171802958*^9, 3.58013174590679*^9}, {3.580132463775083*^9, 
+   3.58013249039812*^9}, {3.580132755524654*^9, 3.580132756275569*^9}, {
+   3.5801336476880493`*^9, 3.580133658977089*^9}, {3.5801341115995207`*^9, 
+   3.580134171594603*^9}, {3.580134277067593*^9, 3.580134307141903*^9}, {
+   3.5801343526402884`*^9, 3.580134355745504*^9}, {3.580134430560855*^9, 
+   3.580134442175366*^9}, 3.580134526230419*^9, {3.580135046024644*^9, 
+   3.5801351084312572`*^9}, {3.5801353715716352`*^9, 
+   3.5801353859039516`*^9}, {3.580135460114436*^9, 3.5801354764347467`*^9}, {
+   3.580135546374308*^9, 3.5801355651092777`*^9}, {3.580135601037651*^9, 
+   3.580135686376*^9}, {3.580135774073946*^9, 3.580136035459546*^9}, {
+   3.580136088054634*^9, 3.580136116550456*^9}, {3.580137565320795*^9, 
+   3.580137570027835*^9}},
+ Background->GrayLevel[0.85]],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+CALCULATION FUNCTIONS (DO NOT EDIT)\
+\>", "Subsubtitle",
+ CellChangeTimes->{{3.5801357108724403`*^9, 3.580135721094129*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"stpgasdensity", " ", "=", " ", 
+   RowBox[{
+    RowBox[{"(", 
+     RowBox[{"stpbackpressure", " ", "+", "stppressure"}], ")"}], " ", "/", 
+    " ", 
+    RowBox[{"(", 
+     RowBox[{"rgas", " ", "*", " ", "stptemperature"}], ")"}]}]}], ";", " ", 
+  RowBox[{"(*", " ", 
+   RowBox[{
+   "Determines", " ", "the", " ", "density", " ", "of", " ", "the", " ", 
+    "lift", " ", "gas", " ", "at", " ", "STP"}], " ", "*)"}], 
+  "\[IndentingNewLine]", 
+  RowBox[{"volume", " ", "=", " ", 
+   RowBox[{"fillvolume", " ", "/.", 
+    RowBox[{"Solve", "[", 
+     RowBox[{
+      RowBox[{"stpforce", " ", "\[Equal]", " ", 
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"(", 
+           RowBox[{"stpairdensity", " ", "-", " ", "stpgasdensity"}], ")"}], 
+          "*", " ", "fillvolume"}], ")"}], " ", "-", " ", 
+        RowBox[{"(", 
+         RowBox[{"balloonmass", " ", "+", " ", "payloadmass", " ", "+", " ", 
+          RowBox[{"(", 
+           RowBox[{"mmgas", " ", "*", " ", 
+            RowBox[{"(", 
+             RowBox[{"fillvolume", " ", "/", " ", "22.4"}], ")"}]}], ")"}]}], 
+         ")"}]}]}], ",", " ", "fillvolume"}], "]"}]}]}], ";", " ", 
+  RowBox[{"(*", " ", 
+   RowBox[{
+   "One", " ", "GIANT", " ", "formula", " ", "that", " ", "determines", " ", 
+    "the", " ", "number", " ", "of", " ", "stadard", " ", "cubic", " ", 
+    "meters", " ", "of", " ", "lift", " ", "gas", " ", "that", " ", "are", 
+    " ", "necessary", " ", "at", " ", "launch", " ", "to", " ", "produce", 
+    " ", "the", " ", "desired", " ", "lift"}], " ", "*)"}]}]], "Input",
+ CellChangeTimes->{{3.58013168168435*^9, 3.580131711428348*^9}, {
+   3.5801317553117228`*^9, 3.580131975710074*^9}, 3.5801321509123583`*^9, {
+   3.580132250783329*^9, 3.580132252373575*^9}, {3.580132285198085*^9, 
+   3.5801323421838713`*^9}, {3.580132377627721*^9, 3.5801324404130497`*^9}, {
+   3.580132494804729*^9, 3.580132555637807*^9}, {3.580132604621654*^9, 
+   3.580132608219892*^9}, 3.580132656925906*^9, {3.5801327211806793`*^9, 
+   3.580132736003459*^9}, {3.580133249258191*^9, 3.58013325071432*^9}, {
+   3.580133537831027*^9, 3.580133561791876*^9}, {3.580134776100741*^9, 
+   3.5801348581099243`*^9}, {3.5801351344690228`*^9, 3.580135142147614*^9}, 
+   3.580135728153858*^9, {3.580137550311729*^9, 3.580137573075616*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"mass", " ", "=", " ", 
+   RowBox[{"(", 
+    RowBox[{"balloonmass", " ", "+", " ", "payloadmass", " ", "+", " ", 
+     RowBox[{"(", 
+      RowBox[{"mmgas", "*", 
+       RowBox[{"(", 
+        RowBox[{"volume", "/", "22.4"}], ")"}]}], ")"}]}], ")"}]}], ";", 
+  RowBox[{"(*", " ", 
+   RowBox[{
+    RowBox[{
+    "Calculates", " ", "the", " ", "total", " ", "mass", " ", "of", " ", 
+     "the", " ", "balloon"}], ",", " ", 
+    RowBox[{"its", " ", "gas"}], ",", " ", 
+    RowBox[{"and", " ", "its", " ", "payloads", " ", "in", " ", "kg"}]}], " ",
+    "*)"}], "\[IndentingNewLine]", 
+  RowBox[{"altairdensity", " ", "=", " ", 
+   RowBox[{"altpressure", " ", "/", " ", 
+    RowBox[{"(", 
+     RowBox[{"rair", " ", "*", " ", "alttemperature"}], ")"}]}]}], ";", 
+  RowBox[{"(*", " ", 
+   RowBox[{
+   "Determines", " ", "the", " ", "density", " ", "of", " ", "air", " ", "at",
+     " ", "the", " ", "desired", " ", "altitude"}], " ", "*)"}], 
+  "\[IndentingNewLine]", 
+  RowBox[{"altgasdensity", " ", "=", " ", 
+   RowBox[{
+    RowBox[{"(", 
+     RowBox[{"altpressure", " ", "+", "altbackpressure"}], ")"}], "/", " ", 
+    RowBox[{"(", 
+     RowBox[{"rgas", " ", "*", " ", "alttemperature"}], ")"}]}]}], ";", " ", 
+  RowBox[{"(*", " ", 
+   RowBox[{
+   "Determines", " ", "the", " ", "density", " ", "of", " ", "the", " ", 
+    "lift", " ", "gas", " ", "at", " ", "the", " ", "desired", " ", 
+    "altitude"}], " ", "*)"}], "\[IndentingNewLine]", 
+  RowBox[{"targetvolume", " ", "=", " ", 
+   RowBox[{"altvolume", " ", "/.", 
+    RowBox[{"Solve", "[", 
+     RowBox[{
+      RowBox[{"altforce", " ", "\[Equal]", " ", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"(", 
+          RowBox[{"altairdensity", "-", " ", "altgasdensity"}], ")"}], " ", 
+         "*", " ", "altvolume"}], " ", "-", " ", "mass"}]}], ",", " ", 
+      "altvolume"}], "]"}]}]}], ";", " ", 
+  RowBox[{"(*", " ", 
+   RowBox[{
+   "Saves", " ", "the", " ", "AT", " ", "ALTITUDE", " ", "volume", " ", "of", 
+    " ", "the", " ", "lift", " ", "gas", " ", "in", " ", "the", " ", 
+    "balloon", " ", "required", " ", "to", " ", "achieve", " ", "specified", 
+    " ", "lift", " ", 
+    RowBox[{"(", 
+     RowBox[{"0", " ", "for", " ", "neutral"}], ")"}], " ", "in", " ", "the", 
+    " ", "variable", " ", "targetvolume"}], " ", "*)"}]}]], "Input",
+ CellChangeTimes->{{3.580132775334363*^9, 3.580132778035982*^9}, {
+   3.5801328393752737`*^9, 3.580132878869194*^9}, {3.580133432169504*^9, 
+   3.580133434768887*^9}, {3.580133621775402*^9, 3.5801336225440903`*^9}, {
+   3.580133670089073*^9, 3.58013367170916*^9}, {3.580134104920794*^9, 
+   3.580134106959206*^9}, {3.580134330758052*^9, 3.580134420051841*^9}, {
+   3.580134459360248*^9, 3.580134550791551*^9}, {3.580134860037532*^9, 
+   3.580134971879822*^9}, {3.580135036185912*^9, 3.580135039584701*^9}, 
+   3.5801357382495728`*^9, {3.580137507957522*^9, 3.580137543177561*^9}, {
+   3.5801375796804667`*^9, 3.5801375799981003`*^9}, {3.580137937147155*^9, 
+   3.580137937538906*^9}}],
+
+Cell[BoxData["0.018419431506174457`"], "Output",
+ CellChangeTimes->{{3.580137510585247*^9, 3.5801375280207253`*^9}, 
+   3.580137584072008*^9}]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"stpaltvolume", " ", "=", " ", 
+   RowBox[{
+    RowBox[{"(", 
+     RowBox[{
+     "targetvolume", " ", "*", " ", "altpressure", " ", "*", " ", 
+      "stptemperature"}], ")"}], "/", 
+    RowBox[{"(", 
+     RowBox[{"stppressure", " ", "*", " ", "alttemperature"}], ")"}]}]}], " ",
+   ";", 
+  RowBox[{"(*", " ", 
+   RowBox[{
+    RowBox[{"Converts", " ", "the", " ", "at"}], "-", 
+    RowBox[{
+    "altitude", " ", "volume", " ", "to", " ", "standard", " ", "cubic", " ", 
+     "meters"}]}], " ", "*)"}]}]], "Input",
+ CellChangeTimes->{{3.580134565460061*^9, 3.580134680045764*^9}, {
+   3.5801347688613577`*^9, 3.5801347693395853`*^9}, {3.580134979615925*^9, 
+   3.580135028777926*^9}, {3.580135116556655*^9, 3.5801351253080673`*^9}, 
+   3.580135742375162*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"volumechange", " ", "=", " ", 
+   RowBox[{"(", 
+    RowBox[{"stpaltvolume", " ", "-", " ", "volume"}], ")"}]}], " ", ";", 
+  RowBox[{"(*", " ", 
+   RowBox[{
+   "Calculates", " ", "the", " ", "difference", " ", "in", " ", "standard", 
+    " ", "cubic", " ", "meters", " ", "between", " ", "the", " ", "amount", 
+    " ", "of", " ", "gas", " ", "necessary", " ", "to", " ", "achieve", " ", 
+    "neutral", " ", "buoyancy", " ", "and", " ", "the", " ", "amount", " ", 
+    "of", " ", "gas", " ", "put", " ", "into", " ", "the", " ", "balloon", 
+    " ", "at", " ", "launch"}], " ", "*)"}]}]], "Input",
+ CellChangeTimes->{{3.5801347189361353`*^9, 3.580134760458385*^9}, {
+   3.580135148994381*^9, 3.58013522931534*^9}, 3.580135745335351*^9}],
+
+Cell[BoxData[
+ RowBox[{"\[IndentingNewLine]", 
+  StyleBox[
+   RowBox[{"CALCULATED", " ", "VALUES", " ", "AND", " ", "RESULTS"}], 
+   "Subsubtitle"]}]], "Input",
+ CellChangeTimes->{{3.580136971690358*^9, 3.5801370326516323`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"results", " ", "=", " ", 
+  RowBox[{"List", "[", 
+   RowBox[{"{", 
+    RowBox[{
+    "volume", ",", " ", "targetvolume", ",", " ", "stpaltvolume", ",", " ", 
+     "volumechange"}], "}"}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.5801370457485733`*^9, 3.580137048375245*^9}, {
+  3.580137085337175*^9, 3.580137085887382*^9}, {3.580137334377481*^9, 
+  3.580137337198635*^9}, {3.580137377143571*^9, 3.580137435068049*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"{", 
+   RowBox[{
+    RowBox[{"{", "1.7696989751320775`", "}"}], ",", 
+    RowBox[{"{", "102.12140297027365`", "}"}], ",", 
+    RowBox[{"{", "1.5875607813150006`", "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"-", "0.18213819381707697`"}], "}"}]}], "}"}], "}"}]], "Output",
+ CellChangeTimes->{
+  3.5801374062969627`*^9, 3.580137439065261*^9, {3.580137510733144*^9, 
+   3.580137528138999*^9}, 3.5801375841903467`*^9}]
+}, Open  ]],
+
+Cell["\<\
+The above output should contain a list of four values. The values will be \
+explained in order from left to right:\[LineSeparator]1. The amount of gas in \
+cubic meters that need to be put into the balloon at launch to obtain the \
+amount of lift you specified in the user-defined values section.
+2. The volume of gas in the balloon at the your target altitude to produce \
+your final target amount of force. You may wish to check this against the \
+burst diameter of your balloon to make sure that you\[CloseCurlyQuote]re not \
+exceeding that number. That would be bad.
+3. The volume of gas from list item 2 converted to standard cubic meters. \
+This should make comparisons easier for you and give you a more familiar unit \
+to analyze your values.
+4. The difference in volume between the volume in list item 3 and list item \
+1. In other words, this is the amount of lift gas that must \
+\[OpenCurlyDoubleQuote]escape\[CloseCurlyDoubleQuote] from the balloon for it \
+to reach neutral buoyancy. If this number appears too low, hydrogen will \
+slowly escape from the balloon, your balloon will reach neutral buoyancy \
+prematurely, and will then begin to descend slowly with time. If this number \
+appears too high, you\[CloseCurlyQuote]ll overshoot neutral buoyancy at that \
+altitude and your balloon might burst if you\[CloseCurlyQuote]re not careful. \
+Try playing around with different values for initial lift force until you get \
+a value with which you are comfortable.\
+\>", "Text",
+ CellChangeTimes->{{3.580137650496211*^9, 3.580137747453237*^9}, {
+  3.58013782132495*^9, 3.580137947334729*^9}, {3.5801379872630367`*^9, 
+  3.580138011492424*^9}, {3.580138063868395*^9, 3.5801382881367283`*^9}}]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{740, 592},
+WindowMargins->{{141, Automatic}, {Automatic, 0}},
+FrontEndVersion->"9.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (November 20, \
+2012)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[557, 20, 94, 1, 28, "Input"],
+Cell[654, 23, 2367, 41, 452, "Text"],
+Cell[3024, 66, 92, 1, 28, "Input"],
+Cell[CellGroupData[{
+Cell[3141, 71, 163, 2, 41, "Subtitle"],
+Cell[3307, 75, 4232, 99, 242, "Code"],
+Cell[CellGroupData[{
+Cell[7564, 178, 134, 3, 29, "Subsubtitle"],
+Cell[7701, 183, 2338, 48, 165, "Input"],
+Cell[CellGroupData[{
+Cell[10064, 235, 3021, 66, 233, "Input"],
+Cell[13088, 303, 142, 2, 28, "Output"]
+}, Open  ]],
+Cell[13245, 308, 790, 20, 63, "Input"],
+Cell[14038, 330, 772, 14, 80, "Input"],
+Cell[14813, 346, 228, 5, 47, "Input"],
+Cell[CellGroupData[{
+Cell[15066, 355, 441, 9, 28, "Input"],
+Cell[15510, 366, 454, 11, 28, "Output"]
+}, Open  ]],
+Cell[15979, 380, 1715, 25, 315, "Text"]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
+
