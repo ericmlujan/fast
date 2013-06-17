@@ -2,7 +2,7 @@ Flying Apple Space Technologies
 ====
 
 This is the main GitHub repository for Flying Apple Space Technologies.
-We specialize in high-altitude ballooning and scientific research software
+We specialize in high-altitude ballooning and scientific research software.
 
 ### Projects
 
