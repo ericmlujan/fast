@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       157,          7]
-NotebookDataLength[     18666,        445]
-NotebookOptionsPosition[     17722,        409]
-NotebookOutlinePosition[     18079,        425]
-CellTagsIndexPosition[     18036,        422]
+NotebookDataLength[     19553,        484]
+NotebookOptionsPosition[     18608,        448]
+NotebookOutlinePosition[     18965,        464]
+CellTagsIndexPosition[     18922,        461]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -131,28 +131,38 @@ Cell[BoxData[{
    "Desired", " ", "initial", " ", "lift", " ", "force", " ", "in", " ", "kg",
      " ", "of", " ", "force"}], " ", "*)"}]}], "\n", 
  RowBox[{
-  RowBox[{"stpbackpressure", " ", "=", " ", "0"}], ";", " ", 
+  RowBox[{
+   RowBox[{"stpbackpressure", " ", "=", " ", "0"}], ";"}], " ", 
   RowBox[{"(*", " ", 
    RowBox[{
    "Backpressure", " ", "of", " ", "the", " ", "balloon", " ", "at", " ", 
-    "the", " ", "launch", " ", "in", " ", "pascals"}], " ", "*)"}], "\n", 
-  RowBox[{"altpressure", " ", "=", " ", "1197"}], ";", " ", 
+    "the", " ", "launch", " ", "in", " ", "pascals"}], " ", "*)"}]}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"altpressure", " ", "=", " ", "1197"}], ";"}], " ", 
   RowBox[{"(*", " ", 
    RowBox[{
    "Pressure", " ", "of", " ", "the", " ", "atmosphere", " ", "at", " ", 
-    "target", " ", "altitude", " ", "in", " ", "pascals"}], " ", "*)"}], "\n", 
-  RowBox[{"alttemperature", " ", "=", " ", "226.51"}], ";", " ", 
+    "target", " ", "altitude", " ", "in", " ", "pascals"}], " ", 
+   "*)"}]}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"alttemperature", " ", "=", " ", "226.51"}], ";"}], " ", 
   RowBox[{"(*", " ", 
    RowBox[{
    "Temperature", " ", "at", " ", "target", " ", "altitude", " ", "in", " ", 
-    "Kelvin"}], " ", "*)"}], "\n", 
-  RowBox[{"altforce", " ", "=", " ", "0"}], ";", " ", 
+    "Kelvin"}], " ", "*)"}]}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"altforce", " ", "=", " ", "0"}], ";"}], " ", 
   RowBox[{"(*", " ", 
    RowBox[{
    "Desired", " ", "upward", " ", "force", " ", "on", " ", "the", " ", 
     "balloon", " ", "at", " ", "altitude", " ", "in", " ", "kg", " ", "of", 
-    " ", "force"}], " ", "*)"}], "\n", 
-  RowBox[{"altbackpressure", " ", "=", " ", "0"}], ";", " ", 
+    " ", "force"}], " ", "*)"}]}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"altbackpressure", " ", "=", " ", "0"}], ";"}], " ", 
   RowBox[{"(*", " ", 
    RowBox[{
    "Backpressure", " ", "of", " ", "the", " ", "balloon", " ", "at", " ", 
@@ -181,20 +191,36 @@ CALCULATION FUNCTIONS (DO NOT EDIT)\
 \>", "Subsubtitle",
  CellChangeTimes->{{3.5801357108724403`*^9, 3.580135721094129*^9}}],
 
-Cell[BoxData[
+Cell[BoxData[{
  RowBox[{
-  RowBox[{"stpgasdensity", " ", "=", " ", 
-   RowBox[{
-    RowBox[{"(", 
-     RowBox[{"stpbackpressure", " ", "+", "stppressure"}], ")"}], " ", "/", 
-    " ", 
-    RowBox[{"(", 
-     RowBox[{"rgas", " ", "*", " ", "stptemperature"}], ")"}]}]}], ";", " ", 
+  RowBox[{
+   RowBox[{"stpgasdensity", " ", "=", " ", 
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{"stpbackpressure", " ", "+", "stppressure"}], ")"}], " ", "/", 
+     " ", 
+     RowBox[{"(", 
+      RowBox[{"rgas", " ", "*", " ", "stptemperature"}], ")"}]}]}], ";"}], 
+  " ", 
   RowBox[{"(*", " ", 
    RowBox[{
    "Determines", " ", "the", " ", "density", " ", "of", " ", "the", " ", 
-    "lift", " ", "gas", " ", "at", " ", "STP"}], " ", "*)"}], 
-  "\[IndentingNewLine]", 
+    "lift", " ", "gas", " ", "at", " ", "STP"}], " ", 
+   "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"stpairdensity", " ", "=", " ", 
+    RowBox[{
+     RowBox[{"(", "stppressure", ")"}], " ", "/", " ", 
+     RowBox[{"(", 
+      RowBox[{"rair", " ", "*", " ", "stptemperature"}], ")"}]}]}], ";"}], 
+  " ", "\[IndentingNewLine]", 
+  RowBox[{"(*", " ", 
+   RowBox[{
+   "Determines", " ", "the", " ", "density", " ", "of", " ", "the", " ", 
+    "atmosphere", " ", "at", " ", "STP"}], " ", 
+   "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
   RowBox[{"volume", " ", "=", " ", 
    RowBox[{"fillvolume", " ", "/.", 
     RowBox[{"Solve", "[", 
@@ -219,7 +245,7 @@ Cell[BoxData[
     "the", " ", "number", " ", "of", " ", "stadard", " ", "cubic", " ", 
     "meters", " ", "of", " ", "lift", " ", "gas", " ", "that", " ", "are", 
     " ", "necessary", " ", "at", " ", "launch", " ", "to", " ", "produce", 
-    " ", "the", " ", "desired", " ", "lift"}], " ", "*)"}]}]], "Input",
+    " ", "the", " ", "desired", " ", "lift"}], " ", "*)"}]}]}], "Input",
  CellChangeTimes->{{3.58013168168435*^9, 3.580131711428348*^9}, {
    3.5801317553117228`*^9, 3.580131975710074*^9}, 3.5801321509123583`*^9, {
    3.580132250783329*^9, 3.580132252373575*^9}, {3.580132285198085*^9, 
@@ -229,19 +255,19 @@ Cell[BoxData[
    3.580132736003459*^9}, {3.580133249258191*^9, 3.58013325071432*^9}, {
    3.580133537831027*^9, 3.580133561791876*^9}, {3.580134776100741*^9, 
    3.5801348581099243`*^9}, {3.5801351344690228`*^9, 3.580135142147614*^9}, 
-   3.580135728153858*^9, {3.580137550311729*^9, 3.580137573075616*^9}}],
+   3.580135728153858*^9, {3.580137550311729*^9, 3.580137573075616*^9}, {
+   3.5804941267532578`*^9, 3.580494192862957*^9}}],
 
-Cell[CellGroupData[{
-
-Cell[BoxData[
+Cell[BoxData[{
  RowBox[{
-  RowBox[{"mass", " ", "=", " ", 
-   RowBox[{"(", 
-    RowBox[{"balloonmass", " ", "+", " ", "payloadmass", " ", "+", " ", 
-     RowBox[{"(", 
-      RowBox[{"mmgas", "*", 
-       RowBox[{"(", 
-        RowBox[{"volume", "/", "22.4"}], ")"}]}], ")"}]}], ")"}]}], ";", 
+  RowBox[{
+   RowBox[{"mass", " ", "=", " ", 
+    RowBox[{"(", 
+     RowBox[{"balloonmass", " ", "+", " ", "payloadmass", " ", "+", " ", 
+      RowBox[{"(", 
+       RowBox[{"mmgas", "*", 
+        RowBox[{"(", 
+         RowBox[{"volume", "/", "22.4"}], ")"}]}], ")"}]}], ")"}]}], ";"}], 
   RowBox[{"(*", " ", 
    RowBox[{
     RowBox[{
@@ -249,38 +275,45 @@ Cell[BoxData[
      "the", " ", "balloon"}], ",", " ", 
     RowBox[{"its", " ", "gas"}], ",", " ", 
     RowBox[{"and", " ", "its", " ", "payloads", " ", "in", " ", "kg"}]}], " ",
-    "*)"}], "\[IndentingNewLine]", 
-  RowBox[{"altairdensity", " ", "=", " ", 
-   RowBox[{"altpressure", " ", "/", " ", 
-    RowBox[{"(", 
-     RowBox[{"rair", " ", "*", " ", "alttemperature"}], ")"}]}]}], ";", 
+    "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"altairdensity", " ", "=", " ", 
+    RowBox[{"altpressure", " ", "/", " ", 
+     RowBox[{"(", 
+      RowBox[{"rair", " ", "*", " ", "alttemperature"}], ")"}]}]}], ";"}], 
   RowBox[{"(*", " ", 
    RowBox[{
    "Determines", " ", "the", " ", "density", " ", "of", " ", "air", " ", "at",
-     " ", "the", " ", "desired", " ", "altitude"}], " ", "*)"}], 
-  "\[IndentingNewLine]", 
-  RowBox[{"altgasdensity", " ", "=", " ", 
-   RowBox[{
-    RowBox[{"(", 
-     RowBox[{"altpressure", " ", "+", "altbackpressure"}], ")"}], "/", " ", 
-    RowBox[{"(", 
-     RowBox[{"rgas", " ", "*", " ", "alttemperature"}], ")"}]}]}], ";", " ", 
+     " ", "the", " ", "desired", " ", "altitude"}], " ", 
+   "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"altgasdensity", " ", "=", " ", 
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{"altpressure", " ", "+", "altbackpressure"}], ")"}], "/", " ", 
+     RowBox[{"(", 
+      RowBox[{"rgas", " ", "*", " ", "alttemperature"}], ")"}]}]}], ";"}], 
+  " ", 
   RowBox[{"(*", " ", 
    RowBox[{
    "Determines", " ", "the", " ", "density", " ", "of", " ", "the", " ", 
     "lift", " ", "gas", " ", "at", " ", "the", " ", "desired", " ", 
-    "altitude"}], " ", "*)"}], "\[IndentingNewLine]", 
-  RowBox[{"targetvolume", " ", "=", " ", 
-   RowBox[{"altvolume", " ", "/.", 
-    RowBox[{"Solve", "[", 
-     RowBox[{
-      RowBox[{"altforce", " ", "\[Equal]", " ", 
-       RowBox[{
+    "altitude"}], " ", "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"targetvolume", " ", "=", " ", 
+    RowBox[{"altvolume", " ", "/.", 
+     RowBox[{"Solve", "[", 
+      RowBox[{
+       RowBox[{"altforce", " ", "\[Equal]", " ", 
         RowBox[{
-         RowBox[{"(", 
-          RowBox[{"altairdensity", "-", " ", "altgasdensity"}], ")"}], " ", 
-         "*", " ", "altvolume"}], " ", "-", " ", "mass"}]}], ",", " ", 
-      "altvolume"}], "]"}]}]}], ";", " ", 
+         RowBox[{
+          RowBox[{"(", 
+           RowBox[{"altairdensity", "-", " ", "altgasdensity"}], ")"}], " ", 
+          "*", " ", "altvolume"}], " ", "-", " ", "mass"}]}], ",", " ", 
+       "altvolume"}], "]"}]}]}], ";"}], " ", 
   RowBox[{"(*", " ", 
    RowBox[{
    "Saves", " ", "the", " ", "AT", " ", "ALTITUDE", " ", "volume", " ", "of", 
@@ -289,7 +322,7 @@ Cell[BoxData[
     " ", "lift", " ", 
     RowBox[{"(", 
      RowBox[{"0", " ", "for", " ", "neutral"}], ")"}], " ", "in", " ", "the", 
-    " ", "variable", " ", "targetvolume"}], " ", "*)"}]}]], "Input",
+    " ", "variable", " ", "targetvolume"}], " ", "*)"}]}]}], "Input",
  CellChangeTimes->{{3.580132775334363*^9, 3.580132778035982*^9}, {
    3.5801328393752737`*^9, 3.580132878869194*^9}, {3.580133432169504*^9, 
    3.580133434768887*^9}, {3.580133621775402*^9, 3.5801336225440903`*^9}, {
@@ -301,22 +334,18 @@ Cell[BoxData[
    3.5801375796804667`*^9, 3.5801375799981003`*^9}, {3.580137937147155*^9, 
    3.580137937538906*^9}}],
 
-Cell[BoxData["0.018419431506174457`"], "Output",
- CellChangeTimes->{{3.580137510585247*^9, 3.5801375280207253`*^9}, 
-   3.580137584072008*^9}]
-}, Open  ]],
-
 Cell[BoxData[
  RowBox[{
-  RowBox[{"stpaltvolume", " ", "=", " ", 
-   RowBox[{
-    RowBox[{"(", 
-     RowBox[{
-     "targetvolume", " ", "*", " ", "altpressure", " ", "*", " ", 
-      "stptemperature"}], ")"}], "/", 
-    RowBox[{"(", 
-     RowBox[{"stppressure", " ", "*", " ", "alttemperature"}], ")"}]}]}], " ",
-   ";", 
+  RowBox[{
+   RowBox[{"stpaltvolume", " ", "=", " ", 
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{
+      "targetvolume", " ", "*", " ", "altpressure", " ", "*", " ", 
+       "stptemperature"}], ")"}], "/", 
+     RowBox[{"(", 
+      RowBox[{"stppressure", " ", "*", " ", "alttemperature"}], ")"}]}]}], 
+   " ", ";"}], 
   RowBox[{"(*", " ", 
    RowBox[{
     RowBox[{"Converts", " ", "the", " ", "at"}], "-", 
@@ -330,9 +359,10 @@ Cell[BoxData[
 
 Cell[BoxData[
  RowBox[{
-  RowBox[{"volumechange", " ", "=", " ", 
-   RowBox[{"(", 
-    RowBox[{"stpaltvolume", " ", "-", " ", "volume"}], ")"}]}], " ", ";", 
+  RowBox[{
+   RowBox[{"volumechange", " ", "=", " ", 
+    RowBox[{"(", 
+     RowBox[{"stpaltvolume", " ", "-", " ", "volume"}], ")"}]}], " ", ";"}], 
   RowBox[{"(*", " ", 
    RowBox[{
    "Calculates", " ", "the", " ", "difference", " ", "in", " ", "standard", 
@@ -344,12 +374,20 @@ Cell[BoxData[
  CellChangeTimes->{{3.5801347189361353`*^9, 3.580134760458385*^9}, {
    3.580135148994381*^9, 3.58013522931534*^9}, 3.580135745335351*^9}],
 
+Cell[CellGroupData[{
+
 Cell[BoxData[
  RowBox[{"\[IndentingNewLine]", 
   StyleBox[
    RowBox[{"CALCULATED", " ", "VALUES", " ", "AND", " ", "RESULTS"}], 
    "Subsubtitle"]}]], "Input",
  CellChangeTimes->{{3.580136971690358*^9, 3.5801370326516323`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"AND", " ", "CALCULATED", " ", "RESULTS", " ", "VALUES"}]], "Output",\
+
+ CellChangeTimes->{3.580494078302588*^9, 3.58049414924043*^9}]
+}, Open  ]],
 
 Cell[CellGroupData[{
 
@@ -368,14 +406,15 @@ Cell[BoxData[
  RowBox[{"{", 
   RowBox[{"{", 
    RowBox[{
-    RowBox[{"{", "1.7696989751320775`", "}"}], ",", 
-    RowBox[{"{", "102.12140297027365`", "}"}], ",", 
-    RowBox[{"{", "1.5875607813150006`", "}"}], ",", 
+    RowBox[{"{", "1.7689797782726524`", "}"}], ",", 
+    RowBox[{"{", "102.1213992046654`", "}"}], ",", 
+    RowBox[{"{", "1.5875607227755384`", "}"}], ",", 
     RowBox[{"{", 
-     RowBox[{"-", "0.18213819381707697`"}], "}"}]}], "}"}], "}"}]], "Output",
+     RowBox[{"-", "0.181419055497114`"}], "}"}]}], "}"}], "}"}]], "Output",
  CellChangeTimes->{
   3.5801374062969627`*^9, 3.580137439065261*^9, {3.580137510733144*^9, 
-   3.580137528138999*^9}, 3.5801375841903467`*^9}]
+   3.580137528138999*^9}, 3.5801375841903467`*^9, 3.580494078693514*^9, 
+   3.580494149273875*^9}]
 }, Open  ]],
 
 Cell["\<\
@@ -429,22 +468,22 @@ Cell[654, 23, 2367, 41, 452, "Text"],
 Cell[3024, 66, 92, 1, 28, "Input"],
 Cell[CellGroupData[{
 Cell[3141, 71, 163, 2, 41, "Subtitle"],
-Cell[3307, 75, 4232, 99, 242, "Code"],
+Cell[3307, 75, 4354, 109, 242, "Code"],
 Cell[CellGroupData[{
-Cell[7564, 178, 134, 3, 29, "Subsubtitle"],
-Cell[7701, 183, 2338, 48, 165, "Input"],
+Cell[7686, 188, 134, 3, 29, "Subsubtitle"],
+Cell[7823, 193, 2882, 65, 199, "Input"],
+Cell[10708, 260, 3143, 74, 233, "Input"],
+Cell[13854, 336, 812, 21, 63, "Input"],
+Cell[14669, 359, 788, 15, 80, "Input"],
 Cell[CellGroupData[{
-Cell[10064, 235, 3021, 66, 233, "Input"],
-Cell[13088, 303, 142, 2, 28, "Output"]
+Cell[15482, 378, 228, 5, 47, "Input"],
+Cell[15713, 385, 157, 3, 28, "Output"]
 }, Open  ]],
-Cell[13245, 308, 790, 20, 63, "Input"],
-Cell[14038, 330, 772, 14, 80, "Input"],
-Cell[14813, 346, 228, 5, 47, "Input"],
 Cell[CellGroupData[{
-Cell[15066, 355, 441, 9, 28, "Input"],
-Cell[15510, 366, 454, 11, 28, "Output"]
+Cell[15907, 393, 441, 9, 28, "Input"],
+Cell[16351, 404, 499, 12, 28, "Output"]
 }, Open  ]],
-Cell[15979, 380, 1715, 25, 315, "Text"]
+Cell[16865, 419, 1715, 25, 315, "Text"]
 }, Open  ]]
 }, Open  ]]
 }
@@ -452,4 +491,3 @@ Cell[15979, 380, 1715, 25, 315, "Text"]
 *)
 
 (* End of internal cache information *)
-
