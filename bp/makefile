@@ -10,7 +10,9 @@
 # Macros
 #
 
-CC = /usr/bin/gcc
+
+# Make sure that you change your CC to the C compiler that you have installed. GCC is recommended.
+CC = /usr/bin/gcc 
 CC_OPTIONS = 
 LNK_OPTIONS = 
 

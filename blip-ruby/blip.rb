@@ -39,4 +39,4 @@ else
 	end
 end
 
-# End of file (sad face)
+# End of file
