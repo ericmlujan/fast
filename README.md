@@ -6,12 +6,15 @@ We specialize in high-altitude ballooning and scientific research software.
 
 ### Projects
 
-We have the following projects uploaded to this account currently and actively maintain them:
+We have the following folders uploaded to this repository currently and actively maintain them:
 
 * `blip-ruby`, a balloon launch and landing predictor written in the Ruby programming language.
 * `blip-c`, a port of the original `blip-ruby` code into ANSI C.
 * `liftbot`, a balloon lift and neutral buoyancy calculator.
 * `bp`, a program for calculating the membrane pressure (backpressure) of a latex weather balloon, written in C specifically for Mac OS X, but portable to any UNIX-like system.
+* `liftbot-gui`, a Java GUI version of the liftbot for Ruby packaged as an executable JAR file.
+* `mathematica`, a collection of helpful notebooks we have created for Wolfram _Mathematica_.
+* `matlab`, a mirror of the helpful backpressure matlab files from zmatt.net.
 
 ### Team
 
