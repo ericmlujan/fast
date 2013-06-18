@@ -270,10 +270,11 @@ public class LiftBot {
 					
 					double launchAirDensity = Formulas.density(launchPressure, rAir, launchTemperature);
 					double launchGasDensity = Formulas.density(launchPressure, rGas, launchTemperature);
-					double launchVolume = Formulas.volume(launchForce, balloonMass, payloadMass, molarMass, launchGasDensity, launchAirDensity);
+					double launchVolume = Formulas.fillVolume(launchForce, balloonMass, payloadMass, molarMass, launchGasDensity, launchAirDensity);
+					double totalMass = Formulas.totalMass(balloonMass, payloadMass, molarMass, launchVolume);
 					double altAirDensity = Formulas.density(altPressure, rAir, altTemperature);
 					double altGasDensity = Formulas.density(altPressure, rGas, altTemperature);
-					double altVolume = Formulas.volume(altForce, balloonMass, payloadMass, molarMass, altGasDensity, altAirDensity);
+					double altVolume = Formulas.altVolume(altForce, totalMass, altAirDensity, altGasDensity);
 					double stpVolume = Formulas.convertToSTP(altVolume, altTemperature, altPressure);
 					double discrepancy = Formulas.volumeChange(launchVolume, stpVolume);
 					

@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       157,          7]
-NotebookDataLength[     19660,        485]
-NotebookOptionsPosition[     18716,        449]
-NotebookOutlinePosition[     19072,        465]
-CellTagsIndexPosition[     19029,        462]
+NotebookDataLength[     19794,        488]
+NotebookOptionsPosition[     18850,        452]
+NotebookOutlinePosition[     19206,        468]
+CellTagsIndexPosition[     19163,        465]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -153,13 +153,16 @@ Cell[BoxData[{
    "Temperature", " ", "at", " ", "target", " ", "altitude", " ", "in", " ", 
     "Kelvin"}], " ", "*)"}]}], "\n", 
  RowBox[{
-  RowBox[{"altforce", " ", "=", " ", "0.2"}], ";", " ", 
+  RowBox[{
+   RowBox[{"altforce", " ", "=", " ", "0.2"}], ";"}], " ", 
   RowBox[{"(*", " ", 
    RowBox[{
    "Desired", " ", "upward", " ", "force", " ", "on", " ", "the", " ", 
     "balloon", " ", "at", " ", "altitude", " ", "in", " ", "kg", " ", "of", 
-    " ", "force"}], " ", "*)"}], "\n", 
-  RowBox[{"altbackpressure", " ", "=", " ", "0"}], ";", " ", 
+    " ", "force"}], " ", "*)"}]}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"altbackpressure", " ", "=", " ", "0"}], ";"}], " ", 
   RowBox[{"(*", " ", 
    RowBox[{
    "Backpressure", " ", "of", " ", "the", " ", "balloon", " ", "at", " ", 
@@ -331,7 +334,7 @@ Cell[BoxData[{
    3.580134971879822*^9}, {3.580135036185912*^9, 3.580135039584701*^9}, 
    3.5801357382495728`*^9, {3.580137507957522*^9, 3.580137543177561*^9}, {
    3.5801375796804667`*^9, 3.5801375799981003`*^9}, {3.580137937147155*^9, 
-   3.580137937538906*^9}}],
+   3.580137937538906*^9}, {3.5805218952287073`*^9, 3.5805218971538973`*^9}}],
 
 Cell[BoxData[
  RowBox[{
@@ -386,7 +389,7 @@ Cell[BoxData[
  RowBox[{"AND", " ", "CALCULATED", " ", "RESULTS", " ", "VALUES"}]], "Output",\
 
  CellChangeTimes->{3.580494078302588*^9, 3.58049414924043*^9, 
-  3.5805193329426937`*^9}]
+  3.5805193329426937`*^9, 3.580520965540476*^9}]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -415,7 +418,7 @@ Cell[BoxData[
  CellChangeTimes->{
   3.5801374062969627`*^9, 3.580137439065261*^9, {3.580137510733144*^9, 
    3.580137528138999*^9}, 3.5801375841903467`*^9, 3.580494078693514*^9, 
-   3.580494149273875*^9, 3.580519332968773*^9}]
+   3.580494149273875*^9, 3.580519332968773*^9, 3.580520965587105*^9}]
 }, Open  ]],
 
 Cell["\<\
@@ -469,22 +472,22 @@ Cell[654, 23, 2367, 41, 357, "Text"],
 Cell[3024, 66, 92, 1, 28, "Input"],
 Cell[CellGroupData[{
 Cell[3141, 71, 163, 2, 41, "Subtitle"],
-Cell[3307, 75, 4362, 106, 242, "Code"],
+Cell[3307, 75, 4402, 109, 242, "Code"],
 Cell[CellGroupData[{
-Cell[7694, 185, 134, 3, 29, "Subsubtitle"],
-Cell[7831, 190, 2924, 67, 114, "Input"],
-Cell[10758, 259, 3143, 74, 114, "Input"],
-Cell[13904, 335, 812, 21, 46, "Input"],
-Cell[14719, 358, 788, 15, 46, "Input"],
+Cell[7734, 188, 134, 3, 29, "Subsubtitle"],
+Cell[7871, 193, 2924, 67, 114, "Input"],
+Cell[10798, 262, 3193, 74, 114, "Input"],
+Cell[13994, 338, 812, 21, 46, "Input"],
+Cell[14809, 361, 788, 15, 46, "Input"],
 Cell[CellGroupData[{
-Cell[15532, 377, 228, 5, 47, "Input"],
-Cell[15763, 384, 184, 4, 28, "Output"]
+Cell[15622, 380, 228, 5, 47, "Input"],
+Cell[15853, 387, 206, 4, 28, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[15984, 393, 441, 9, 28, "Input"],
-Cell[16428, 404, 530, 13, 69, "Output"]
+Cell[16096, 396, 441, 9, 28, "Input"],
+Cell[16540, 407, 552, 13, 35, "Output"]
 }, Open  ]],
-Cell[16973, 420, 1715, 25, 182, "Text"]
+Cell[17107, 423, 1715, 25, 182, "Text"]
 }, Open  ]]
 }, Open  ]]
 }

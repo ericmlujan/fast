@@ -23,10 +23,21 @@ public class Formulas {
 		return density;
 	}
 	/* Use the ideal gas law that we derived in the lab to solve for the volume of a gas needed to attain lift. */
-	public static double volume(double force, double balloonMass, double payloadMass, double molarMass, double gasDensity, double airDensity){
+	public static double fillVolume(double force, double balloonMass, double payloadMass, double molarMass, double gasDensity, double airDensity){
 		double balloonVolume = ( -1. * force - balloonMass - payloadMass) / (0.0446429 * molarMass - (airDensity - gasDensity));
 		return balloonVolume;
 	}
+	
+	public static double altVolume(double force, double totalMass, double altAirDensity, double altGasDensity){
+		double volume = (force + totalMass) / (altAirDensity - altGasDensity);
+		return volume;
+	}
+	
+	public static double totalMass(double balloonMass, double payloadMass, double molarMass, double volume){
+		double mass = balloonMass + payloadMass + (molarMass*(volume/22.4));
+		return mass;
+	}
+	
 	/* Use the combined gas law to convert a given volume of gas under certain conditions to standard cubic meters. */
 	public static double convertToSTP(double volume, double temperature, double pressure){
 		double volumeSTP = (volume * pressure * 298) / (101300 * temperature);
