@@ -26,7 +26,6 @@ i1=find(r1>burst,1)-1;
 h1=h(i1)
 p1=gasp(n1,r1,T)-p;
 l1=lift(n1,M,r1,rho,m);
-L1=l1-m;
 v1=terminalvelocity(n,M,r1,rho,m);
 
 r2=radius_mooneyrivlin(n,p,T,r0,d0,initial);
@@ -34,7 +33,6 @@ i2=find(r2>burst,1)-1;
 h2=h(i2)
 p2=gasp(n,r2,T)-p;
 l2=lift(n,M,r2,rho,m);
-L2=l2-m;
 v2=terminalvelocity(n,M,r2,rho,m);
 
 r3=radius_gent(n,p,T,r0,d0,initial,Jm);
@@ -42,7 +40,6 @@ i3=find(r3>burst,1)-1;
 h3=h(i3)
 p3=gasp(n,r3,T)-p;
 l3=lift(n,M,r3,rho,m);
-L3=l3-m;
 v3=terminalvelocity(n,M,r3,rho,m);
 
 ascent_minutes=sum((h(2)-h(1))./v3(1:i3))/60
@@ -71,7 +68,7 @@ pl=plot(h(1:i1),l1(1:i1),h(1:i2),l2(1:i2),h(1:i3),l3(1:i3));
 title('Lift with altitude');
 legend('non-restoring model','Mooney-Rivlin model','Gent model','location','northwest');
 xlabel('Altitude AMSL (m)');
-ylabel('Free lift (kg)');
+ylabel('Net lift (kg)');
 %print('figure3.png','-dpng','-S900,600');
 
 figure(4);
@@ -82,12 +79,3 @@ legend('non-restoring model','Mooney-Rivlin model','Gent model','location','nort
 xlabel('Altitude AMSL (m)');
 ylabel('Ascent velocity (m/s)');
 %print('figure4.png','-dpng','-S900,600');
-
-figure(5);
-pl=plot(h(1:i1),L1(1:i1),h(1:i2),L2(1:i2),h(1:i3),L3(1:i3));
-%set(pl, 'linewidth', 1.5);
-title('Net lift with altitude');
-legend('non-restoring model','Mooney-Rivlin model','Gent model','location','northwest');
-xlabel('Altitude AMSL (m)');
-ylabel('Net lift (kg)');
-%print('figure5.png','-dpng','-S900,600');
