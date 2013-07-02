@@ -1,3 +1,4 @@
+#!/usr/bin/env ruby
 def density(p, r, t)
 	density = p / (r*t)
 	return density
