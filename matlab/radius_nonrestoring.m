@@ -2,7 +2,4 @@ function r = radius_nonrestoring(n,p,T)
 % Determine balloon radius assuming membrane pressure is negligible
 
 R = 8.3144621; % gas constant
-X = 3*n*R/(4*pi);
-
-r = (X*T./p).^(1/3);
-
+r = ((3*n.*T.*R)./(pi*p.*4)).^(1/3);
