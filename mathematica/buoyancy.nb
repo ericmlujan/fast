@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       157,          7]
-NotebookDataLength[     19794,        488]
-NotebookOptionsPosition[     18850,        452]
-NotebookOutlinePosition[     19206,        468]
-CellTagsIndexPosition[     19163,        465]
+NotebookDataLength[     19718,        470]
+NotebookOptionsPosition[     18775,        434]
+NotebookOutlinePosition[     19131,        450]
+CellTagsIndexPosition[     19088,        447]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -95,74 +95,54 @@ Cell[BoxData[{
    RowBox[{"Gas", " ", "constant", " ", "for", " ", "air", " ", "in", " ", 
     RowBox[{"J", "/", "kg"}], " ", "K"}], " ", "*)"}]}], "\n", 
  RowBox[{
-  RowBox[{
-   RowBox[{"rgas", " ", "=", " ", "4124"}], ";"}], " ", 
+  RowBox[{"rgas", " ", "=", " ", "4124.4"}], ";", " ", 
   RowBox[{"(*", " ", 
    RowBox[{
    "Gas", " ", "constant", " ", "for", " ", "lift", " ", "gas", " ", "in", 
     " ", 
-    RowBox[{"J", "/", "kg"}], " ", "K"}], " ", "*)"}]}], "\n", 
- RowBox[{
-  RowBox[{
-   RowBox[{"mmgas", " ", "=", " ", "0.00201"}], ";"}], " ", 
+    RowBox[{"J", "/", "kg"}], " ", "K"}], " ", "*)"}], "\n", 
+  RowBox[{"mmgas", " ", "=", " ", "0.0020158"}], ";", " ", 
   RowBox[{"(*", " ", 
    RowBox[{
    "Molar", " ", "mass", " ", "of", " ", "the", " ", "gas", " ", "in", " ", 
-    RowBox[{"kg", "/", "mol"}]}], " ", "*)"}]}], "\n", 
- RowBox[{
-  RowBox[{
-   RowBox[{"stppressure", " ", "=", " ", "101300"}], ";"}], " ", 
+    RowBox[{"kg", "/", "mol"}]}], " ", "*)"}], "\n", 
+  RowBox[{"stppressure", " ", "=", " ", "101300"}], ";", " ", 
   RowBox[{"(*", " ", 
    RowBox[{
    "Pressure", " ", "at", " ", "your", " ", "launch", " ", "point", " ", "in",
-     " ", "pascals"}], " ", "*)"}]}], "\n", 
- RowBox[{
-  RowBox[{
-   RowBox[{"stptemperature", " ", "=", " ", "298"}], ";"}], " ", 
+     " ", "pascals"}], " ", "*)"}], "\n", 
+  RowBox[{"stptemperature", " ", "=", " ", "298"}], ";", " ", 
   RowBox[{"(*", " ", 
    RowBox[{
    "Temperature", " ", "at", " ", "your", " ", "launch", " ", "point", " ", 
-    "in", " ", "Kelvin"}], " ", "*)"}]}], "\n", 
- RowBox[{
-  RowBox[{
-   RowBox[{"stpforce", " ", "=", " ", "0.2"}], ";"}], " ", 
+    "in", " ", "Kelvin"}], " ", "*)"}], "\n", 
+  RowBox[{"stpforce", " ", "=", " ", "0.2"}], ";", " ", 
   RowBox[{"(*", " ", 
    RowBox[{
    "Desired", " ", "initial", " ", "lift", " ", "force", " ", "in", " ", "kg",
-     " ", "of", " ", "force"}], " ", "*)"}]}], "\n", 
- RowBox[{
-  RowBox[{
-   RowBox[{"stpbackpressure", " ", "=", " ", "0"}], ";"}], " ", 
+     " ", "of", " ", "force"}], " ", "*)"}], "\n", 
+  RowBox[{"stpbackpressure", " ", "=", " ", "0"}], ";", " ", 
   RowBox[{"(*", " ", 
    RowBox[{
    "Backpressure", " ", "of", " ", "the", " ", "balloon", " ", "at", " ", 
-    "the", " ", "launch", " ", "in", " ", "pascals"}], " ", "*)"}]}], "\n", 
- RowBox[{
-  RowBox[{
-   RowBox[{"altpressure", " ", "=", " ", "1197"}], ";"}], " ", 
+    "the", " ", "launch", " ", "in", " ", "pascals"}], " ", "*)"}], "\n", 
+  RowBox[{"altpressure", " ", "=", " ", "1197"}], ";", " ", 
   RowBox[{"(*", " ", 
    RowBox[{
    "Pressure", " ", "of", " ", "the", " ", "atmosphere", " ", "at", " ", 
-    "target", " ", "altitude", " ", "in", " ", "pascals"}], " ", 
-   "*)"}]}], "\n", 
- RowBox[{
-  RowBox[{
-   RowBox[{"alttemperature", " ", "=", " ", "226.51"}], ";"}], " ", 
+    "target", " ", "altitude", " ", "in", " ", "pascals"}], " ", "*)"}], "\n", 
+  RowBox[{"alttemperature", " ", "=", " ", "226.51"}], ";", " ", 
   RowBox[{"(*", " ", 
    RowBox[{
    "Temperature", " ", "at", " ", "target", " ", "altitude", " ", "in", " ", 
-    "Kelvin"}], " ", "*)"}]}], "\n", 
- RowBox[{
-  RowBox[{
-   RowBox[{"altforce", " ", "=", " ", "0.2"}], ";"}], " ", 
+    "Kelvin"}], " ", "*)"}], "\n", 
+  RowBox[{"altforce", " ", "=", " ", "0.2"}], ";", " ", 
   RowBox[{"(*", " ", 
    RowBox[{
    "Desired", " ", "upward", " ", "force", " ", "on", " ", "the", " ", 
     "balloon", " ", "at", " ", "altitude", " ", "in", " ", "kg", " ", "of", 
-    " ", "force"}], " ", "*)"}]}], "\n", 
- RowBox[{
-  RowBox[{
-   RowBox[{"altbackpressure", " ", "=", " ", "0"}], ";"}], " ", 
+    " ", "force"}], " ", "*)"}], "\n", 
+  RowBox[{"altbackpressure", " ", "=", " ", "0"}], ";", " ", 
   RowBox[{"(*", " ", 
    RowBox[{
    "Backpressure", " ", "of", " ", "the", " ", "balloon", " ", "at", " ", 
@@ -181,7 +161,9 @@ Cell[BoxData[{
    3.580135546374308*^9, 3.5801355651092777`*^9}, {3.580135601037651*^9, 
    3.580135686376*^9}, {3.580135774073946*^9, 3.580136035459546*^9}, {
    3.580136088054634*^9, 3.580136116550456*^9}, {3.580137565320795*^9, 
-   3.580137570027835*^9}, {3.580519319712488*^9, 3.580519322168256*^9}},
+   3.580137570027835*^9}, {3.580519319712488*^9, 3.580519322168256*^9}, {
+   3.581698716239938*^9, 3.581698716314279*^9}, {3.581698846813097*^9, 
+   3.581698847084876*^9}},
  Background->GrayLevel[0.85]],
 
 Cell[CellGroupData[{
@@ -389,7 +371,8 @@ Cell[BoxData[
  RowBox[{"AND", " ", "CALCULATED", " ", "RESULTS", " ", "VALUES"}]], "Output",\
 
  CellChangeTimes->{3.580494078302588*^9, 3.58049414924043*^9, 
-  3.5805193329426937`*^9, 3.580520965540476*^9}]
+  3.5805193329426937`*^9, 3.580520965540476*^9, 3.5816987292743483`*^9, 
+  3.581698850347618*^9}]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -409,16 +392,15 @@ Cell[BoxData[
  RowBox[{"{", 
   RowBox[{"{", 
    RowBox[{
-    RowBox[{"{", "1.7689797782726524`", "}"}], ",", 
-    RowBox[{"{", "113.79135772906356`", "}"}], ",", 
-    RowBox[{"{", "1.7689797782726522`", "}"}], ",", 
-    RowBox[{"{", 
-     RowBox[{"-", "2.220446049250313`*^-16"}], "}"}]}], "}"}], 
-  "}"}]], "Output",
+    RowBox[{"{", "1.7689673651135625`", "}"}], ",", 
+    RowBox[{"{", "113.79055924044098`", "}"}], ",", 
+    RowBox[{"{", "1.7689673651135627`", "}"}], ",", 
+    RowBox[{"{", "2.220446049250313`*^-16", "}"}]}], "}"}], "}"}]], "Output",
  CellChangeTimes->{
   3.5801374062969627`*^9, 3.580137439065261*^9, {3.580137510733144*^9, 
    3.580137528138999*^9}, 3.5801375841903467`*^9, 3.580494078693514*^9, 
-   3.580494149273875*^9, 3.580519332968773*^9, 3.580520965587105*^9}]
+   3.580494149273875*^9, 3.580519332968773*^9, 3.580520965587105*^9, 
+   3.581698729308016*^9, 3.581698850383313*^9}]
 }, Open  ]],
 
 Cell["\<\
@@ -472,22 +454,22 @@ Cell[654, 23, 2367, 41, 357, "Text"],
 Cell[3024, 66, 92, 1, 28, "Input"],
 Cell[CellGroupData[{
 Cell[3141, 71, 163, 2, 41, "Subtitle"],
-Cell[3307, 75, 4402, 109, 242, "Code"],
+Cell[3307, 75, 4254, 91, 242, "Code"],
 Cell[CellGroupData[{
-Cell[7734, 188, 134, 3, 29, "Subsubtitle"],
-Cell[7871, 193, 2924, 67, 114, "Input"],
-Cell[10798, 262, 3193, 74, 114, "Input"],
-Cell[13994, 338, 812, 21, 46, "Input"],
-Cell[14809, 361, 788, 15, 46, "Input"],
+Cell[7586, 170, 134, 3, 29, "Subsubtitle"],
+Cell[7723, 175, 2924, 67, 114, "Input"],
+Cell[10650, 244, 3193, 74, 114, "Input"],
+Cell[13846, 320, 812, 21, 46, "Input"],
+Cell[14661, 343, 788, 15, 46, "Input"],
 Cell[CellGroupData[{
-Cell[15622, 380, 228, 5, 47, "Input"],
-Cell[15853, 387, 206, 4, 28, "Output"]
+Cell[15474, 362, 228, 5, 47, "Input"],
+Cell[15705, 369, 255, 5, 28, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[16096, 396, 441, 9, 28, "Input"],
-Cell[16540, 407, 552, 13, 35, "Output"]
+Cell[15997, 379, 441, 9, 28, "Input"],
+Cell[16441, 390, 576, 12, 69, "Output"]
 }, Open  ]],
-Cell[17107, 423, 1715, 25, 182, "Text"]
+Cell[17032, 405, 1715, 25, 182, "Text"]
 }, Open  ]]
 }, Open  ]]
 }
