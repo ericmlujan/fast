@@ -10,7 +10,7 @@ h=[100:50:30000];
 [rho,a,T,p]=stdatmo(h,0,'SI',true);
 rubberrho=1100; % density of rubber (kgm-3)
 
-%Volume Calculationsbn 
+%Volume Calculations
 LaunchV=1.7266; %volume of gas at launch (m^3)
 initial=((3*LaunchV)/(4*pi))^(1/3);
 r0=initial;
