@@ -4,5 +4,5 @@ function v = terminalvelocity(n,M,r,rho,m)
 l = lift(n,M,r,rho,m);
 Cd = 0.47; %sphere
 g = 9.8;
-v = real(sqrt(2*g*l./(Cd*pi*rho.*r.^2)));
+v = sqrt(2*g*l./(Cd*pi*rho.*r.^2));
 
