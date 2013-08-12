@@ -1,0 +1,158 @@
+% mn2esample.tex
+%
+% v2.1 released 22nd May 2002 (G. Hutton)
+%
+% The mnsample.tex file has been amended to highlight
+% the proper use of LaTeX2e code with the class file
+% and using natbib cross-referencing. These changes
+% do not reflect the original paper by A. V. Raveendran.
+%
+% Previous versions of this sample document were
+% compatible with the LaTeX 2.09 style file mn.sty
+% v1.2 released 5th September 1994 (M. Reed)
+% v1.1 released 18th July 1994
+% v1.0 released 28th January 1994
+
+\documentclass[useAMS,usenatbib]{mn2e}
+\usepackage{graphicx,subfigure}
+\usepackage{bm}
+\usepackage{longtable}
+\usepackage{amsmath,amssymb,graphicx}
+\usepackage{rotating}
+\usepackage{color}
+
+% If your system does not have the AMS fonts version 2.0 installed, then
+% remove the useAMS option.
+%
+% useAMS allows you to obtain upright Greek characters.
+% e.g. \umu, \upi etc.  See the section on "Upright Greek characters" in
+% this guide for further information.
+%
+% If you are using AMS 2.0 fonts, bold math letters/symbols are available
+% at a larger range of sizes for NFSS release 1 and 2 (using \boldmath or
+% preferably \bmath).
+%
+% The usenatbib command allows the use of Patrick Daly's natbib.sty for
+% cross-referencing.
+%
+% If you wish to typeset the paper in Times font (if you do not have the
+% PostScript Type 1 Computer Modern fonts you will need to do this to get
+% smoother fonts in a PDF file) then uncomment the next line
+% \usepackage{Times}
+
+%%%%% AUTHORS - PLACE YOUR OWN MACROS HERE %%%%%
+
+\newcommand{\f}[2]{\frac{#1}{#2}}
+
+% denotes an edit in the actual body of the text.
+%% denotes a personal comment by the editor.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\title[]{High Altitude Ballooning: A Comprehensive Review}
+\author[Amanda Maxham, etc.]{Amanda Maxham\thanks{E-mail:
+maxham@physics.unlv.edu (AM); lujane@unlv.nevada.edu (EL); leeh44@unlv.nevada.edu (HOL); maxham@physics.unlv.edu (IR) } Eric Lujan, Han Oel Lee, and Ian Rabago\\
+Department of Physics and Astronomy, University of Nevada, Las Vegas, Las Vegas, NV, 89124, U.S.A.}
+\begin{document}
+
+\date{Accepted . Received ; }
+
+\pagerange{\pageref{firstpage}--\pageref{lastpage}} \pubyear{2011}
+
+\maketitle
+
+\label{firstpage}
+
+\begin{abstract}
+This will be re-written after the paper is completed
+\end{abstract}
+
+\section{Introduction}
+With the recent interest in high altitude ballooning from universities, companies, and amateur scientists, many are seeking for more information on the science behind high altitude ballooning. This paper reviews some of the science, equipment and calculations behind  a successful launch and features a few interesting student projects.
+%%The introduction should include the motive and purpose of the paper. The reader should be able to recognize the purpose of the entire paper by just reading this paragraph.
+
+\section{Balloon Lift}
+
+\subsection{Net Lift}
+
+A free-floating balloon is acted upon by three forces along the z-axis. The upwards buoyant force, $F_B$, the gravitational force, $F_g$, and the drag force, $F_d$. These forces can be combined to find the net lift force of the balloon:
+
+\begin{equation}
+\Sigma F= F_B - F_g
+\end{equation}
+
+The buoyant force, $F_B$, can be calculated by using the Archimedes Equation:
+
+\begin{equation}
+F_{B} = \rho V
+\end{equation}
+
+where $\rho$ is the density of the displaced fluid in $kg/m^3$ (air, in the case of the balloon), V is the volume of the balloon in $m^3$, and g is the acceleration due to gravity in $m/s^2$. $F_{B}$ is in kilograms, as it is more convenient for our application.
+The density and pressure of the atmosphere changes with altitude, causing the buoyant force to change throughout the flight. The data for density and pressure is available in the 1976 US Standard Atmosphere for up to 86 kilometers. The volume of the gas in the balloon can be measured with a flowmeter attached to the gas source.
+
+The gravitational force, $F_g$, is the mass of the entire balloon, including the payloads, the balloon itself, and the gas inside the balloon:
+
+\begin{equation}
+F_{g}=m_b-m_p-(\f{n*M}{1000})
+\end{equation}
+
+where $m_b$ is the mass of the balloon, $m_p$ is the mass of the payload, $n$ is the moles of gas in the balloon, and $M$ is the mass of the gas in grams.
+
+When both of these forces are combined into equation 1, we end up with the net lift, or $\Sigma F$. This value can be used for various calculations regarding the balloon. 
+
+\subsection{Change In Lift With Altitude}
+\label{sec:backpressure}
+
+During several launches, it was observed that the latex balloon was able to reach neutral buoyancy without any manual changes to the balloon. This meant that the net lift of the balloon decreased with altitude, eventually reaching 0. Of the two forces involved in the net lift, only one can change throughout the flight: buoyancy.
+
+Two factors are involved with buoyancy: The volume of the gas and the density of the air. The density of the air changes throughout the flight due to change in altitude. The volume of the gas also changes throughout the flight, and this can be modeled with the ideal gas law. 
+
+\begin{equation}
+Pv=nRt
+\end{equation}
+
+However, assuming that the pressure inside the balloon is the same as the pressure outside the balloon (the balloon expands to match the pressure), the volume of the balloon changes proportionally to the density of the atmosphere, resulting in no change in lift. Therefore, we must consider another factor that effects the volume of the gas. This factor is the back pressure that the latex balloon has on the gas inside. 
+
+\subsection{Neutral Buoyancy}
+
+Achieving neutral buoyancy is the foundation of achieving long-distance balloon flight. When a balloon is neutrally buoyant, it is able maintain suspension in the atmosphere and thus be exposed to high-altitude wind currents for a larger duration. Most trans-continental and trans-oceanic flights attain near-neutral buoyancy and maintain it for long periods of time, allowing them to travel long distances for extended periods of time.
+
+Neutral buoyancy is achieved when the forces on the balloon along the z-axis reach a point of equalibrium so that:
+
+\begin{equation}
+	F = 0 = F_B - F_g
+\end{equation}
+
+Which can be manipulated to show equivalence between buoyant force and gravity:
+
+\begin{equation}
+	F_B = F_g
+\end{equation}
+
+In practice, this is acheived by filling the balloon with an excess of gas that creates a small net initial upwards force (in excess of gravity) that diminishes over the course of the flight (see Section~\ref{sec:backpressure}).
+
+Initial net upwards lift is critical to the balloon's buoyancy at a target altitude. Adding too much gas at the launch point will cause the balloon to burst before it can become neutrally buoyant. A shortage of initial gas will cause the force of gravity to exceed the buoyant force at the target altitude and cause the balloon to sink.
+
+There is no "magic amount" of extra lift that guarantees neutral buoyancy. The amount of extra lift required is dependent on the size of the balloon, atmospheric conditions, the type of lift gas used, and the mass of the payload.
+
+In our calculations, adding a net excess of approximately 200g of lift at the launch point would cause a 1600g hydrogen balloon with an attached 150g payload to reach neutral buoyancy at an altitude of 30,000m.
+
+\section{Burst Altitude}
+
+\subsection{Balloon Elasticity}
+
+\subsection{Flight Applications}
+
+\section{The effect of wind vectors on the ascent and descent paths of high-altitude balloons}
+
+\subsection{Mathematical Modeling}
+
+\subsection{Experimental Examples}
+
+This is a test of the in-line citation and referencing system.\cite{ERIC}
+
+\label{lastpage}
+
+
+\end{document}
