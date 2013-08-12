@@ -13,13 +13,17 @@
 % v1.1 released 18th July 1994
 % v1.0 released 28th January 1994
 
-\documentclass[useAMS,usenatbib]{mn2e}
+\documentclass[usaAMS,usenatbib]{mn2e}
+\let\bibhang\relax
 \usepackage{graphicx,subfigure}
 \usepackage{bm}
 \usepackage{longtable}
 \usepackage{amsmath,amssymb,graphicx}
 \usepackage{rotating}
 \usepackage{color}
+\usepackage{cite}
+
+\bibliographystyle{mn2e}
 
 % If your system does not have the AMS fonts version 2.0 installed, then
 % remove the useAMS option.
@@ -150,9 +154,8 @@ In our calculations, adding a net excess of approximately 200g of lift at the la
 
 \subsection{Experimental Examples}
 
-This is a test of the in-line citation and referencing system.\cite{ERIC}
-
 \label{lastpage}
 
+\bibliography{sources}
 
 \end{document}
