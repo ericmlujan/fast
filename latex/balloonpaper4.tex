@@ -13,17 +13,20 @@
 % v1.1 released 18th July 1994
 % v1.0 released 28th January 1994
 
-\documentclass[usaAMS,usenatbib]{mn2e}
+\documentclass[usenatbib]{mn2e}
 \let\bibhang\relax
 \usepackage{graphicx,subfigure}
 \usepackage{bm}
 \usepackage{longtable}
+\usepackage{float}
 \usepackage{amsmath,amssymb,graphicx}
 \usepackage{rotating}
 \usepackage{color}
 \usepackage{cite}
+\usepackage{epstopdf}
 
 \bibliographystyle{mn2e}
+\bibdata{sources}
 
 % If your system does not have the AMS fonts version 2.0 installed, then
 % remove the useAMS option.
@@ -67,11 +70,9 @@ Department of Physics and Astronomy, University of Nevada, Las Vegas, Las Vegas,
 \maketitle
 
 \label{firstpage}
-
 \begin{abstract}
 This will be re-written after the paper is completed
 \end{abstract}
-
 \section{Introduction}
 With the recent interest in high altitude ballooning from universities, companies, and amateur scientists, many are seeking for more information on the science behind high altitude ballooning. This paper reviews some of the science, equipment and calculations behind  a successful launch and features a few interesting student projects.
 %%The introduction should include the motive and purpose of the paper. The reader should be able to recognize the purpose of the entire paper by just reading this paragraph.
@@ -126,6 +127,8 @@ The modified Mooney-Rivlin model for an incompressible spherical rubber shell is
 \Delta P = 2\mu\frac{t_0}{r_0}((\frac{t_0}{r_0})-(\frac{t_0}{r_0})^7)(1+\frac{1-\alpha}{\alpha}(\frac{t_0}{r_0})^2)
 \end{equation}
 
+Where $\mu$ is the shear modulus, $\alpha$ is a constant, $r_0$ is the unstretched radius of the balloon, $r$ is the inflated radius of the balloon, and $t_0$ is the thickness of the balloon. Setting $\alpha$ as 1 results in the neo-Hookean model. While this is useful for small stretches, it does not accurately describe experimental data at high values of strain "Kanner". The values in "Müller" suggest values of $\f{10}{11}$ for $\alpha$ and $300 kPa$ for $\mu$.
+
 \subsection{Neutral Buoyancy}
 
 Achieving neutral buoyancy is the foundation of achieving long-distance balloon flight. When a balloon is neutrally buoyant, it is able maintain suspension in the atmosphere and thus be exposed to high-altitude wind currents for a larger duration. Most trans-continental and trans-oceanic flights attain near-neutral buoyancy and maintain it for long periods of time, allowing them to travel long distances for extended periods of time.
@@ -148,22 +151,26 @@ Initial net upwards lift is critical to the balloon's buoyancy at a target altit
 
 There is no "magic amount" of extra lift that guarantees neutral buoyancy. The amount of extra lift required is dependent on the size of the balloon, atmospheric conditions, the type of lift gas used, and the mass of the payload.
 
-In our calculations, adding a net excess of approximately 200g of lift at the launch point would cause a 1600g hydrogen balloon with an attached 150g payload to reach neutral buoyancy at an altitude of 30,000m.
+Our team launched a neutrally-buoyant balloon from Mesquite, Arizona, USA, on August 4, 2013 at 16:29 UTC.
+Its ascent path is plotted below:
+
+\begin{figure}[!ht]
+  \begin{center}
+  \includegraphics[width=0.5\textwidth]{altitude.eps}
+  \caption{Altitude of neutrally-buoyant balloon vs. time}
+\end{center}
+\end{figure}
+
+
 
 \section{Burst Altitude}
 
 \subsection{Balloon Elasticity}
 
-\subsection{Flight Applications}
-
 \section{The effect of wind vectors on the ascent and descent paths of high-altitude balloons}
-
-\subsection{Mathematical Modeling}
 
 \subsection{Experimental Examples}
 
 \label{lastpage}
-
 \bibliography{sources}
-
 \end{document}
