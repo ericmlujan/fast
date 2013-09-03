@@ -1,0 +1,51 @@
+http://www.sciencedirect.com/science/article/pii/S030193220900010X
+
+@article{veldhuis2009freely,
+  title={Freely rising light solid spheres},
+  author={Veldhuis, CHJ and Biesheuvel, A and Lohse, D},
+  journal={International Journal of Multiphase Flow},
+  volume={35},
+  number={4},
+  pages={312--322},
+  year={2009},
+  publisher={Elsevier}
+}
+
+http://rspa.royalsocietypublishing.org/content/457/2012/1999.full.pdf
+
+@article{horgan2001anti,
+  title={Anti-plane shear deformations for non-Gaussian isotropic, incompressible hyperelastic materials},
+  author={Horgan, Cornelius O and Saccomandi, Giuseppe},
+  journal={Proceedings of the Royal Society of London. Series A: Mathematical, Physical and Engineering Sciences},
+  volume={457},
+  number={2012},
+  pages={1999--2017},
+  year={2001},
+  publisher={The Royal Society}
+}
+
+http://www.sciencedirect.com/science/article/pii/0020768377900361
+
+@article{needleman1977inflation,
+  title={Inflation of spherical rubber balloons},
+  author={Needleman, Alan},
+  journal={International Journal of Solids and Structures},
+  volume={13},
+  number={5},
+  pages={409--421},
+  year={1977},
+  publisher={Elsevier}
+}
+
+http://www.researchgate.net/publication/40703984_Fitting_hyperelastic_models_to_experimental_data/file/d912f50f020472745a.pdf
+
+@article{ogden2004fitting,
+  title={Fitting hyperelastic models to experimental data},
+  author={Ogden, RW and Saccomandi, G and Sgura, I},
+  journal={Computational Mechanics},
+  volume={34},
+  number={6},
+  pages={484--502},
+  year={2004},
+  publisher={Springer}
+}
