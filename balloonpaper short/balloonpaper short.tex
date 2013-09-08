@@ -90,7 +90,7 @@ A free-floating balloon is acted upon by two major forces along the z-axis. The 
 The buoyant force, $F_B$, can be calculated by using the Archimedes Equation:
 
 \begin{equation}
-F_{B} = \rho V
+F_{B} = \rho V g
 \end{equation}
 
 where $\rho$ is the density of the displaced fluid in $kg/m^3$ (in our case, air), V is the volume of the balloon in $m^3$, and g is the acceleration due to gravity in $m/s^2$. Kilograms is used for $F_{B}$ instead of newtons , as it is more convenient for our application.
@@ -110,7 +110,7 @@ When both of these forces are combined into equation 1, we end up with the net l
 \subsection{Change In Lift With Altitude}
 \label{sec:backpressure}
 
-During several launches, it was observed that the latex balloon was able to reach neutral buoyancy without any intentional changes to the balloon. This meant that the net lift of the balloon decreased with altitude, eventually reaching 0. Of the two forces involved in the net lift, only one can change throughout the flight: buoyancy.
+During several experimental deployments, it was observed that the latex balloon was able to reach a state of neutral buoyancy without any manual modifications to the balloon during its flight. This suggests that the lift force of the balloon changes throughout the flight with altitude. Of the two forces that influence $\Sigma F$, only $F_B$ can potentially change, assuming the mass stays constant
 
 Two factors are involved with buoyancy: The volume of the gas and the density of the air. The density of the air changes throughout the flight due to change in altitude. The volume of the gas also changes throughout the flight, and this can be modeled with the ideal gas law. 
 
@@ -120,15 +120,15 @@ Pv=nRt
 
 However, assuming that the pressure inside the balloon is the same as the pressure outside the balloon (the balloon expands to match the pressure), the volume of the balloon changes proportionally to the density of the atmosphere, resulting in no change in lift. This is contradictory to our observations; therefore, there has to be another factor that effects the volume. This is the back pressure of the elastic latex on the gas inside. 
 
-Various models exist for sphere rubber shells (also known as rubber balloons), including the Gent model and the Mooney-Rivlin model. This paper will be focusing on the Mooney-Rivlin model too keep the paper concise.
+Various models exist for sphere rubber shells (also known as rubber balloons), including the Gent model and the Mooney-Rivlin model. This paper will be focusing on the Mooney-Rivlin model to keep the paper concise.
 
-The modified Mooney-Rivlin model for an incompressible spherical rubber shell is as such:
+The modified Mooney-Rivlin model for the back pressure of an incompressible spherical rubber shell is as such:
 
 \begin{equation}
 \Delta P = 2\mu\frac{t_0}{r_0}((\frac{t_0}{r_0})-(\frac{t_0}{r_0})^7)(1+\frac{1-\alpha}{\alpha}(\frac{t_0}{r_0})^2)
 \end{equation}
 
-Where $\mu$ is the shear modulus, $\alpha$ is a constant, $r_0$ is the unstretched radius of the balloon, $r$ is the inflated radius of the balloon, and $t_0$ is the thickness of the balloon. Setting $\alpha$ as 1 results in the neo-Hookean model. While this is useful for small stretches, it does not accurately describe experimental data at high values of strain "Kanner". "Müller" suggests values of $\f{10}{11}$ for $\alpha$ and $300 kPa$ for $\mu$ to accurately model the radius of the rubber balloon.
+Where $\mu$ is the shear modulus, $\alpha$ is a constant, $r_0$ is the unstretched radius of the balloon, $r$ is the inflated radius of the balloon, and $t_0$ is the thickness of the balloon. Setting $\alpha$ as 1 results in the neo-Hookean model. While this is useful for small stretches, it does not accurately describe experimental data at high values of strain "Kanner". Müller suggests values of $\f{10}{11}$ for $\alpha$ and $300 kPa$ for $\mu$ to accurately model the radius of the rubber balloon.
 
 This equation can be adapted for the lift equation "lift equation reference" by solving for r, which can then be intrepreted for the volume of a sphere.
 
@@ -139,7 +139,7 @@ Achieving neutral buoyancy is the foundation of achieving long-distance balloon 
 Neutral buoyancy is achieved when the forces on the balloon along the z-axis reach a point of equalibrium so that:
 
 \begin{equation}
-	F = 0 = F_B - F_g
+\Sigma F = 0 = F_B - F_g
 \end{equation}
 
 Which can be manipulated to show equivalence between buoyant force and gravity:
@@ -148,7 +148,7 @@ Which can be manipulated to show equivalence between buoyant force and gravity:
 	F_B = F_g
 \end{equation}
 
-In practice, this is acheived by filling the balloon with an excess of gas that creates a small net initial upwards force (in excess of gravity) that diminishes over the course of the flight (see Section~\ref{sec:backpressure}).
+In practice, this is acheived by filling the balloon with an excess of gas that creates a small net initial upwards force (in excess of gravity) that diminishes over the course of the flight (see Section \ref{sec:backpressure}).
 
 Initial net upwards lift is critical to the balloon's buoyancy at a target altitude. Adding too much gas at the launch point will cause the balloon to burst before it can become neutrally buoyant. A shortage of initial gas will cause the force of gravity to exceed the buoyant force at the target altitude and cause the balloon to sink.
 
@@ -158,7 +158,7 @@ Our team launched a neutrally-buoyant balloon from Mesquite, Arizona, USA, on Au
 Its ascent path is plotted below:
 
 \begin{figure}[!ht]
-  \begin{center}
+\begin{center}
   \includegraphics[width=0.5\textwidth]{altitude.eps}
   \caption{Altitude of neutrally-buoyant balloon vs. time}
 \end{center}

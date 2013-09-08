@@ -1,12 +1,13 @@
 # Fdb version 3
-["bibtex balloonpaper short"] 1378229961 "balloonpaper short.aux" "balloonpaper short.bbl" "balloonpaper short" 1378229962
+["bibtex balloonpaper short"] 1378320936 "balloonpaper short.aux" "balloonpaper short.bbl" "balloonpaper short" 1378396164
   "./mn2e.bst" 1376345300 25418 5745165e5da55960bf37bbaa9bf6b92b ""
-  "balloonpaper short.aux" 1378229962 662 4426f5e3a979d3f8a5fbbc50ada05aa4 ""
+  "balloonpaper short.aux" 1378396162 662 4426f5e3a979d3f8a5fbbc50ada05aa4 ""
   "balloonpaper short.bcf" 0 -1 0 ""
-  "sources.bib" 1376517328 1108 346be8ee1d605e23d9bcaffbad37536c ""
+  "sources.bib" 1378320730 1084 a867d611fe8a31115a80d1aa76a96738 ""
   (generated)
+  "balloonpaper short.blg"
   "balloonpaper short.bbl"
-["pdflatex"] 1378229961 "balloonpaper short.tex" "balloonpaper short.pdf" "balloonpaper short" 1378229962
+["pdflatex"] 1378396147 "balloonpaper short.tex" "balloonpaper short.pdf" "balloonpaper short" 1378396164
   "/usr/local/texlive/2013/texmf-dist/tex/context/base/supp-pdf.mkii" 1337017135 71627 94eb9990bed73c364d7f53f960cc8c5b ""
   "/usr/local/texlive/2013/texmf-dist/tex/generic/oberdiek/etexcmds.sty" 1335995445 7612 c47308d923ec19888707b0f1792b326a ""
   "/usr/local/texlive/2013/texmf-dist/tex/generic/oberdiek/ifluatex.sty" 1303254447 7324 11d14f318d865f420e692d4e6c9c18c3 ""
@@ -50,9 +51,9 @@
   "/usr/local/texlive/2013/texmf-dist/tex/latex/tools/longtable.sty" 1254151720 11948 81a7677988a1aa6fe0c169167e78a0d7 ""
   "altitude-eps-converted-to.pdf" 1376433271 12454 3cb5b0cbef1ab07a202be8af1fc4eada ""
   "altitude.eps" 1376433271 14070 4a571eebf9476554b74f255cfb0da5e2 ""
-  "balloonpaper short.aux" 1378229962 662 4426f5e3a979d3f8a5fbbc50ada05aa4 ""
-  "balloonpaper short.bbl" 1378229961 49 0eba253fc001332e731e8aba3f23127b "bibtex balloonpaper short"
-  "balloonpaper short.tex" 1378229959 8726 1cab173e8f520df8c6a8cfefb2e5d2bf ""
+  "balloonpaper short.aux" 1378396162 662 4426f5e3a979d3f8a5fbbc50ada05aa4 ""
+  "balloonpaper short.bbl" 1378320936 49 0eba253fc001332e731e8aba3f23127b "bibtex balloonpaper short"
+  "balloonpaper short.tex" 1378396141 8793 cab24ec86f4b4dfeaa1d37599ee797cb ""
   "mn2e.cls" 1375822497 50683 20facf97cd9703775a6b9e3d13dffd81 ""
   (generated)
   "balloonpaper short.aux"
