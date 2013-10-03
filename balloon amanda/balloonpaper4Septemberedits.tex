@@ -1,0 +1,169 @@
+% mn2esample.tex
+%
+% v2.1 released 22nd May 2002 (G. Hutton)
+%
+% The mnsample.tex file has been amended to highlight
+% the proper use of LaTeX2e code with the class file
+% and using natbib cross-referencing. These changes
+% do not reflect the original paper by A. V. Raveendran.
+%
+% Previous versions of this sample document were
+% compatible with the LaTeX 2.09 style file mn.sty
+% v1.2 released 5th September 1994 (M. Reed)
+% v1.1 released 18th July 1994
+% v1.0 released 28th January 1994
+
+\documentclass[useAMS,usenatbib]{mn2e}
+\usepackage{graphicx,subfigure}
+\usepackage{bm}
+\usepackage{longtable}
+\usepackage{amsmath,amssymb,graphicx}
+\usepackage{rotating}
+\usepackage{color}
+
+% If your system does not have the AMS fonts version 2.0 installed, then
+% remove the useAMS option.
+%
+% useAMS allows you to obtain upright Greek characters.
+% e.g. \umu, \upi etc.  See the section on "Upright Greek characters" in
+% this guide for further information.
+%
+% If you are using AMS 2.0 fonts, bold math letters/symbols are available
+% at a larger range of sizes for NFSS release 1 and 2 (using \boldmath or
+% preferably \bmath).
+%
+% The usenatbib command allows the use of Patrick Daly's natbib.sty for
+% cross-referencing.
+%
+% If you wish to typeset the paper in Times font (if you do not have the
+% PostScript Type 1 Computer Modern fonts you will need to do this to get
+% smoother fonts in a PDF file) then uncomment the next line
+% \usepackage{Times}
+
+%%%%% AUTHORS - PLACE YOUR OWN MACROS HERE %%%%%
+
+\newcommand{\f}[2]{\frac{#1}{#2}}
+
+% denotes an edit in the actual body of the text.
+%% denotes a personal comment by the editor.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\title[]{High Altitude Ballooning: A Comprehensive Review}
+\author[Amanda Maxham, etc.]{Amanda Maxham\thanks{E-mail:
+maxham@physics.unlv.edu (AM); lujane@unlv.nevada.edu (EL); leeh44@unlv.nevada.edu (HOL); maxham@physics.unlv.edu (IR) } Eric Lujan, Han Oel Lee, and Ian Rabago\\
+Department of Physics and Astronomy, University of Nevada, Las Vegas, Las Vegas, NV, 89124, U.S.A.}
+\begin{document}
+
+\date{Accepted . Received ; }
+
+\pagerange{\pageref{firstpage}--\pageref{lastpage}} \pubyear{2011}
+
+\maketitle
+
+\label{firstpage}
+
+\begin{abstract}
+This will be re-written after the paper is completed
+\end{abstract}
+
+\section{Introduction}
+With the recent interest in high altitude ballooning from universities, companies, and amateur scientists, many are seeking for more information on the science behind high altitude ballooning. This paper reviews some of the science, equipment and calculations behind a successful launch…
+
+%%The introduction should include the motive and purpose of the paper. The reader should be able to recognize the purpose of the entire paper by just reading this paragraph.
+
+\section{Balloon Lift}
+To determine both rise velocity, time of flight and to make an accurate determination of the bursting altitude of a high altitude balloon (HAB), one must be able to accurately determine the amount of free lift the balloon-payload system will have upon release. 
+
+Just as a balloon is let go, the free lift can be determined by the balance of the upwards buoyant force, $F_B$ and the downwards weight of the balloon, the lifting gas it contains and its payloads (here taken all together as $F_g$).
+
+\begin{equation}
+F_{FL}= F_B - F_g
+\end{equation}
+
+In the field, the free lift of the balloon is rarely measured as it would necessitate attaching a scale (or balancing dead weights) to the very end of the flight string with the balloon tethered above it (see Figure X for a diagram of a typical balloon/payload set-up). Unless taken inside a building in still air, such a measurement is severely limited by the motion of the balloon as is reacts to wind forces.
+
+Nozzle lift (or neck lift), the lift measured just below the neck of the balloon is more commonly measured, but suffers from similar problems to measuring free lift, especially when accurate determinations are needed in the field. 
+
+The use of a mass flowmeter with totalizer is useful for measuring accurately the lift added to a balloon, even when in the field under windy conditions. Such an instrument added in-line with the filling mechanism measures the total mass (or volume in standard units which may be converted to mass) of lifting gas entering the balloon during the fill. This can be used to determine the free lift of the balloon, or more commonly, the desired free lift can be obtained by filling with the desired amount of lifting gas. The target amount of gas can be easily determined after payload weights have been determined by a computer program or smartphone application.
+ 
+The weight of the payloads
+
+A free-floating balloon is acted upon by three forces along the z-axis. The upwards buoyant force, $F_B$, the gravitational force, $F_g$, and the drag force, $F_d$. These forces combine to determine the free lift force (or net lift) of the balloon:
+
+\begin{equation}
+F _{FL}= \rho_{air}V_{gas} – (m_b + m_p + m_{gas})
+\end{equation}
+
+
+Where $F_{FL}$ is measured in units of mass, the buoyant force of the payload air displacement is not considered (see below). We will also forego any changes to the volume of the gas (and therefore the balloon) due to backpressure compression. (For launches where the balloon is let go before it becomes turgid, backpressure is not a factor).
+
+Using the ideal gas law for both the volume of the lifting gas and the density of air (script R designates the use of the combined gas constant for these gases) gives:
+ 
+\begin{equation}
+F _{FL}= (\f{R_g}{R_{air}} - 1) m_{gas} – m_b + m_p 
+\end{equation}
+
+Examining this equation, it is clear that if none of these factors change, the free lift of the balloon at launch will remain a constant throughout the flight. If this free lift does not change, the balloon-payload system will never achieve neutral buoyancy. 
+
+If a target free lift is desired, the amount of gas needed can be determined from equation x. A flowmeter, such as the Alicat xxx, measures the amount of gas entering the balloon in units of ‘’standard cubic feet’’, where standard pressure is taken to be 1 atm or 101,300 Pascal and standard temperature is 25 $^\circ$ Celsius. This can be converted to mass as appropriate or $m_{gas}$ can be represented as $\f{V P}{R T}$.
+
+For completeness, the nozzle lift, or neck lift is related to the free lift as follows:
+\section{Estimating burst altitude}
+Once a balloon is filled with lifting gas, closed and let go, the altitude at which it bursts can be estimated by knowing the volume or radius at which the balloon is rated to burst. ...
+
+In general, the less lifting gas added to the balloon, the higher it will go before busting as the gas will have more room to expand within the enclosing balloon. The goal for a high altitude attempt is to have the lightest payload possible (to necessitate the least amount of lifting gas) and to add just enough gas to lift the balloon and payloads. If too little gas is added, a latex balloon will become neutrally buoyant.
+
+\section{ Change in free lift for a closed latex balloon with payload}
+A latex weather balloon is designed to rise and expand, reach its maximum diameter and burst, sending the attached payloads back to Earth. As can be seen from equation xx, if none of the factors changes, the free lift will remain constant throughout the flight. As long as the free lift remains constant, the balloon will never become neutrally buoyant. Effects such as a changing acceleration due to gravity cannot make a difference (as g changes both the buoyant force and the weight of the payloads, balloon and gas in equal proportion). Composition of air was considered as a factor that could change free lift (i.e. if there are more, heavy molecules found in lower layers of the atmosphere), but this was determined to be insignificant (although we consider the effects of relative humidity, especially as the balloon rises through cloud layers). ??
+
+In order to achieve neutral buoyancy, some balloon projects have used a vent or valve to expel lifting gas (and thereby decrease the lift) when a target altitude or pressure is achieved. Others have used an aerostat, which relies on an large, unchanging platform, which displaces a larger weight of air on the ground than at altitude. Here we examine the second and another way of achieving neutral buoyancy in a closed latex balloon, by using the balloon’s own properties to cancel a small amount of lift given at launch. 
+
+\subsection{Effects of an unchanging payload volume}
+\subsection{Effects of latex back pressure}
+
+
+
+
+
+
+\section{Ascent velocity}
+
+The density and pressure of the atmosphere changes with altitude, causing the buoyant force to change throughout the flight. The data for density and pressure is available in the 1976 US Standard Atmosphere for up to 86 kilometers. The volume of the gas in the balloon can be measured with a flowmeter attached to the gas source.
+
+
+\subsection{Change In Lift With Altitude}
+\label{sec:backpressure}
+
+During several launches, it was observed that the latex balloon was able to reach neutral buoyancy without any manual changes to the balloon. This meant that the net lift of the balloon decreased with altitude, eventually reaching 0. Of the two forces involved in the net lift, only one can change throughout the flight: buoyancy.
+
+Two factors are involved with buoyancy: The volume of the gas and the density of the air. The density of the air changes throughout the flight due to change in altitude. The volume of the gas also changes throughout the flight, and this can be modeled with the ideal gas law. 
+
+However, assuming that the pressure inside the balloon is the same as the pressure outside the balloon (the balloon expands to match the pressure), the volume of the balloon changes proportionally to the density of the atmosphere, resulting in no change in lift. Therefore, we must consider another factor that effects the volume of the gas. This factor is the back pressure that the latex balloon has on the gas inside. 
+
+\subsection{Neutral Buoyancy}
+
+Achieving neutral buoyancy is the foundation of achieving long-distance balloon flight. When a balloon is neutrally buoyant, it is able maintain suspension in the atmosphere and thus be exposed to high-altitude wind currents for a larger duration. Most trans-continental and trans-oceanic flights attain near-neutral buoyancy and maintain it for long periods of time, allowing them to travel long distances for extended periods of time.
+
+Neutral buoyancy is achieved when the forces on the balloon along the z-axis reach a point of equilibrium so that:
+
+\begin{equation}
+	F = 0 = F_B - F_g
+\end{equation}
+
+In practice, this is achieved by filling the balloon with an excess of gas that creates a small net initial upwards force (in excess of gravity) that diminishes over the course of the flight (see Section~\ref{sec:backpressure}).
+
+Initial net upwards lift is critical to the balloon's buoyancy at a target altitude. Adding too much gas at the launch point will cause the balloon to burst before it can become neutrally buoyant. A shortage of initial gas will cause the force of gravity to exceed the buoyant force at the target altitude and cause the balloon to sink.
+
+There is no "magic amount" of extra lift that guarantees neutral buoyancy. The amount of extra lift required is dependent on the size of the balloon, atmospheric conditions, the type of lift gas used, and the mass of the payload.
+
+In our calculations, adding a net excess of approximately 200g of lift at the launch point would cause a 1600g hydrogen balloon with an attached 150g payload to reach neutral buoyancy at an altitude of 30,000m.
+
+
+This is a test of the in-line citation and referencing system.\cite{ERIC}
+
+\label{lastpage}
+
+
+\end{document}

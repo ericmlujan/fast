@@ -1,14 +1,11 @@
 % balloon parameters
-burst=2.89; % burst radius (m)
-mb=1.616; % balloon mass (kg)
-mp=0.189; % payload mass (kg)
+burst=2.9; % burst radius (m)
+mb=1.6; % balloon mass (kg)
+mp=0.1806; % payload mass (kg)
 M=2.0158; % molecular mass of gas (g)
 
 % range of altitudes to sweep (m)
 h=[100:50:30000];
-burst=3.5017; % burst radius (m)
-mb=1.6; % balloon mass (kg)
-mp=0.1806; % payload mass (kg)
 M=2.0158; % molecular mass of gas (g)
 
 [rho,a,T,p]=stdatmo(h,0,'SI',true);
@@ -16,7 +13,7 @@ rubberrho=1100; % density of rubber (kgm-3)
 
 %Volume Calculations
 STPV=1.8334;
-LaunchV=(T(1)*101300*STPV)/(293.2*p(1)); %volume of gas at launch (m^3)
+LaunchV=(T(1)*101300*STPV)/(293.2*p(1)); %volum 1e of gas at launch (m^3)
 initial=((3*LaunchV)/(4*pi))^(1/3);
 r0=initial;
 
