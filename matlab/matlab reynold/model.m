@@ -8,11 +8,11 @@ M=1.00794; % molecular mass of gas (g)
 h=[100:50:33000];
 M=1.00794; % molecular mass of gas (g)
 
-[rho,a,T,p]=stdatmo(h,0,'SI',true);
+[rho,a,T,p,nu]=stdatmo(h,0,'SI',true);
 rubberrho=1100; % density of rubber (kgm-3)
 
 %Volume Calculations
-STPV=1.74149;
+STPV=1.741;
 LaunchV=(T(1)*101300*STPV)/(293.2*p(1)); %volume of gas at launch (m^3)
 initial=((3*LaunchV)/(4*pi))^(1/3);
 r0=initial;
@@ -31,31 +31,31 @@ i1=find(r1>burst,1)-1;
 h1=h(i1);
 p1=gasp(n1,r1,T)-p;
 l1=lift(n1,M,r1,rho,m);
-v1=terminalvelocity(n,M,r1,rho,m);
+[v1,Re1,Cd1]=terminalvelocity(n,M,r1,rho,m,nu);
 
 r2=radius_mooneyrivlin(n,p,T,r0,d0,initial);
 i2=find(r2>burst,1)-1;
 h2=h(i2);
 p2=gasp(n,r2,T)-p;
 l2=lift(n,M,r2,rho,m);
-v2=terminalvelocity(n,M,r2,rho,m);
+[v2,Re2,Cd2]=terminalvelocity(n,M,r2,rho,m,nu);
 
 %figure(1);
 %pl=plot(h(1:i1),r1(1:i1),h(1:i2),r2(1:i2));
 %set(pl, 'linewidth', 1.5);
-title('Balloon radius with altitude');
-legend('non-restoring model','Mooney-Rivlin model','location','northwest');
-xlabel('Altitude AMSL (m)');
-ylabel('Balloon radius (m)');
+%title('Balloon radius with altitude');
+%legend('non-restoring model','Mooney-Rivlin model','location','northwest');
+%xlabel('Altitude AMSL (m)');
+%ylabel('Balloon radius (m)');
 %print('figure1.png','-dpng','-S900,600');
 
 %figure(2);
 %pl=plot(h(1:i1),p1(1:i1),h(1:i2),p2(1:i2));
 %set(pl, 'linewidth', 1.5);
-title('Membrane pressure with altitude');
-legend('non-restoring model','Mooney-Rivlin model','location','northwest');
-xlabel('Altitude AMSL (m)');
-ylabel('Membrane pressure (Pa)');
+%title('Membrane pressure with altitude');
+%legend('non-restoring model','Mooney-Rivlin model','location','northwest');
+%xlabel('Altitude AMSL (m)');
+%ylabel('Membrane pressure (Pa)');
 %print('figure2.png','-dpng','-S900,600');
 
 %figure(3);
@@ -67,7 +67,7 @@ ylabel('Membrane pressure (Pa)');
 %ylabel('Net lift (kg)');
 %print('figure3.png','-dpng','-S900,600');
 
-figure(2);
+figure(3);
 pl=plot(h(1:i1),v1(1:i1),h(1:i2),v2(1:i2));
 %set(pl, 'linewidth', 1.5);
 title('Ascent velocity with altitude');
