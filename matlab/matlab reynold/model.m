@@ -5,8 +5,7 @@ mp=0.189; % payload mass (kg)
 M=1.00794; % molecular mass of gas (g)
 
 % range of altitudes to sweep (m)
-h=[100:50:33000];
-M=1.00794; % molecular mass of gas (g)
+h=[560:100:33000];
 
 [rho,a,T,p,nu]=stdatmo(h,0,'SI',true);
 rubberrho=1100; % density of rubber (kgm-3)

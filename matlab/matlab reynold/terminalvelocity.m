@@ -1,15 +1,15 @@
 function [v, Re, Cd] = terminalvelocity(n,M,r,rho,m,nu)
 % Evaluate terminal velocity of balloon
 
-l = lift(n,M,r,rho,m);
-Cd = 0.5;
+l = abs(lift(n,M,r,rho,m));
+Cd = 0.3;
 g = 9.8;
 v(1) = sqrt(2*g*l(1)/(Cd*pi*rho(1)*r(1)^2));
 [x,y]=size(l);
 Re = zeros(1, y);
 
 for i= 2:y
-    Re(i) = v(i-1)*(r(i)*2)*rho(i)/nu(i);
+    Re(i) = v(i-1)*(r(i)*2)/nu(i);
     %if Re(i) > 10^6
     %    Cd(i)=0.1;
     %elseif Re(i) < 10^5
