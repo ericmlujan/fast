@@ -1,17 +1,17 @@
 % balloon parameters
 burst=2.9; % burst radius (m)
-mb=1.616; % balloon mass (kg)
-mp=0.189; % payload mass (kg)
+mb=1.631; % balloon mass (kg)
+mp=0.197; % payload mass (kg)
 M=1.00794; % molecular mass of gas (g)
 
 % range of altitudes to sweep (m)
-h=[560:100:33000];
+h=[1000:100:33000];
 
 [rho,a,T,p,nu]=stdatmo(h,0,'SI',true);
 rubberrho=1100; % density of rubber (kgm-3)
 
 %Volume Calculations
-STPV=1.741;
+STPV=1.9691;
 LaunchV=(T(1)*101300*STPV)/(293.2*p(1)); %volume of gas at launch (m^3)
 initial=((3*LaunchV)/(4*pi))^(1/3);
 r0=initial;
@@ -57,21 +57,41 @@ l2=lift(n,M,r2,rho,m);
 %ylabel('Membrane pressure (Pa)');
 %print('figure2.png','-dpng','-S900,600');
 
-%figure(3);
-%pl=plot(h(1:i1),l1(1:i1),h(1:i2),l2(1:i2));
+figure(1);
+pl=plot(h(1:i1),l1(1:i1),h(1:i2),l2(1:i2));
 %set(pl, 'linewidth', 1.5);
-%title('Lift with altitude');
-%legend('non-restoring model','Mooney-Rivlin model','location','northwest');
-%xlabel('Altitude AMSL (m)');
-%ylabel('Net lift (kg)');
+title('Lift with altitude');
+legend('non-restoring model','Mooney-Rivlin model','location','northwest');
+xlabel('Altitude AMSL (m)');
+ylabel('Net lift (kg)');
 %print('figure3.png','-dpng','-S900,600');
 
-figure(3);
+figure(2);
 pl=plot(h(1:i1),v1(1:i1),h(1:i2),v2(1:i2));
 %set(pl, 'linewidth', 1.5);
 title('Ascent velocity with altitude');
 legend('non-restoring model','Mooney-Rivlin model','location','northwest');
 xlabel('Altitude AMSL (m)');
 ylabel('Ascent velocity (m/s)');
-axis([0 35000 0 4.5])
+%axis([0 35000 0 4.5])
+%print('figure4.png','-dpng','-S900,600');
+
+figure(3);
+pl=plot(h(1:i1),Re2(1:i1));
+%set(pl, 'linewidth', 1.5);
+title('Reynolds number');
+%legend('Reynolds Number','Drag Coefficient','location','northwest');
+xlabel('Altitude AMSL (m)');
+ylabel('Reynolds number');
+%axis([0 35000 0 4.5])
+%print('figure4.png','-dpng','-S900,600');
+
+figure(4);
+pl=plot(h(1:i1),Cd2(1:i1));
+%set(pl, 'linewidth', 1.5);
+title('Drag Coefficient');
+%legend('Reynolds Number','Drag Coefficient','location','northwest');
+xlabel('Altitude AMSL (m)');
+ylabel('Drag Coefficient');
+%axis([0 35000 0 4.5])
 %print('figure4.png','-dpng','-S900,600');

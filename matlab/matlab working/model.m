@@ -5,14 +5,14 @@ mp=0.189; % payload mass (kg)
 M=1.00794; % molecular mass of gas (g)
 
 % range of altitudes to sweep (m)
-h=[100:50:33000];
+h=[5000:100:33000];
 M=1.00794; % molecular mass of gas (g)
 
 [rho,a,T,p]=stdatmo(h,0,'SI',true);
 rubberrho=1100; % density of rubber (kgm-3)
 
 %Volume Calculations
-STPV=1.74149;
+STPV=1.741;
 LaunchV=(T(1)*101300*STPV)/(293.2*p(1)); %volume of gas at launch (m^3)
 initial=((3*LaunchV)/(4*pi))^(1/3);
 r0=initial;
@@ -74,5 +74,5 @@ title('Ascent velocity with altitude');
 legend('non-restoring model','Mooney-Rivlin model','location','northwest');
 xlabel('Altitude AMSL (m)');
 ylabel('Ascent velocity (m/s)');
-axis([0 35000 0 4.5])
+%axis([0 35000 0 4.5])
 %print('figure4.png','-dpng','-S900,600');
